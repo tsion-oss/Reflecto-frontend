@@ -147,11 +147,50 @@ const Journal = () => {
       console.log(userr.username)
   }, [userr]);
   
-  
+//  delete function
 
+const deleteJournal = (journalId) => {
+  const response = axios.delete(`http//localhost:3001/api/journal/${journalId}`)
+}
+
+useEffect(() =>  {
+ 
+}, [])
+
+const [editingIndex, setEditingIndex] = useState(-1);
+  const [editedContent, setEditedContent] = useState('');
+
+  // ... (existing code)
+
+  const handleEditClick = (index, content) => {
+    setEditingIndex(index);
+    setEditedContent(content);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingIndex(-1);
+    setEditedContent('');
+  };
+
+  const handleUpdateJournal = async (e, journalId) => {
+    e.preventDefault();
+    try {
+      await axios.put(`http://localhost:3001/api/journal/${journalId}`, {
+        content: editedContent, 
+      });
+      setEditingIndex(-1); 
+      setEditedContent(''); 
+      fetchJournals(); 
+    } catch (error) {
+      console.error('Error updating journal entry', error.message);
+    }
+  };
+
+
+  
   return (
     <div className="mainJournal">
-      <Nav />
+       <Nav />
       <Header />
       <style>{styles}</style>
       <h1 className='howareyou'>How are you?    {userr.username}</h1>
@@ -195,30 +234,57 @@ const Journal = () => {
             <h1>Random quotes</h1>
           </div>
         </div>
-        <div className="journalListMain">
-          
-          <div className="journalList">
-            <div className="horizontalScrollContainer">
-              <div className="journalStack">
-                {journal.map((journ, index) => (
-                  <div
-                    key={journ._id}
-                    className={`eachJournal ${currentPageIndex === index ? 'open' : ''}`}
-                    style={{
-                      zIndex: getZIndex(index),
-                    }}
-                  >
-                    <p style={{ textAlign: 'right', marginTop: '-10px'}}>{journ.date}</p>
-                    <br/>
-                    <p>{journ.content}</p>
-                    <p className='index'>{journal.length -index - 1 + 1}</p>
-                  </div>
-                ))}
-              </div>
+      <div className="journalListMain">
+        <div className="journalList">
+          <div className="horizontalScrollContainer">
+            <div className="journalStack">
+              {journal.map((journ, index) => (
+                <div
+                  key={journ._id}
+                  className={`eachJournal ${currentPageIndex === index ? 'open' : ''}`}
+                  style={{
+                    zIndex: getZIndex(index),
+                  }}
+                >
+                  <p style={{ textAlign: 'right', marginTop: '-10px' }}>{journ.date}</p>
+                  <br />
+                  {editingIndex === index ? ( // If the entry is being edited, show the textarea
+                    <form onSubmit={(e) => handleUpdateJournal(e, journ._id)}>
+                      <textarea
+                        value={editedContent}
+                        onChange={(e) => setEditedContent(e.target.value)}
+                        rows={10}
+                        style={{
+                          fontFamily: selectedFont,
+                          fontSize: '12px',
+                          lineHeight: '1.5',
+                          padding: '15px',
+                          border: '1px solid #ccc',
+                          background: 'white',
+                          width: '340px',
+                        }}
+                      />
+                      <div>
+                        <button type="submit">Save</button>
+                        <button type="button" onClick={handleCancelEdit}>
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  ) : (
+                    <div>
+                      <p onClick={() => handleEditClick(index, journ.content)}>{journ.content}</p>
+                      <p className="index">{journal.length - index - 1 + 1}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
+
+    </div>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import Journal from './component/Journal';
 import Mood from './component/Mood';
 import Nav from './component/Nav';
 import Signup from './component/Signup';
+import UserSetting from './component/UserSetting';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/journal" element={<Journal />} />
             <Route path="/mood" element={<Mood />} />
+            <Route path='/usersetting' element={<UserSetting/>} />
           </>
         ) : (
           <Route path="/signup" element={<Signup />} />

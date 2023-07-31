@@ -287,6 +287,7 @@ header{
   background: white;
   border-radius: 20px;
   margin-top: 30px;
+
 }
 .doughnut{
   width: 450px;
@@ -506,5 +507,8 @@ header{
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
 }
 
+.each-journal textarea{
+  height: 500px;
+}
 
 
