@@ -1,0 +1,418 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  
+}
+.app{
+  width: 100%;
+  height: 100%;
+}
+html, body{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  
+}
+.login{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+textarea:focus{
+  border-bottom-color: #007bff;
+}
+
+.login {
+  display: flex;
+  height: 100vh;
+   /* Set the height to 100% of the viewport height */
+}
+
+.left-login {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color: #BACFC5;
+}
+
+.left-login img {
+  max-width: 100%; 
+  max-height: 100%;
+}
+
+.right-login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.right-login p {
+  margin-bottom: 60px;
+  font-size: 25px;
+  font-family: Amita;
+}
+.right-login form{
+  width: 80%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+.right-login h1{
+  color: #6A7770;
+  font-family: Leckerli One;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.right-login div {
+  margin-bottom: 15px;
+}
+
+.right-login label {
+  display: block;
+  text-align: left;
+  margin-left: 80px;
+  margin-bottom: 10px;
+  color: #000;
+  font-family: 'IM FELL Great Primer SC';
+}
+
+.right-login .input-wrapper input[type="text"],
+.right-login .input-wrapper input[type="password"] {
+  width: 65%;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid lightgray;
+  color: rgb(160, 160, 160);
+}
+
+.right-login button {
+  width: 150px;
+  padding: 5px;
+  background: #6A7770;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: Jaldi;
+}
+
+.right-login p {
+  margin-top: 10px;
+  color: rgb(122, 121, 121);
+ 
+}
+
+.right-login a {
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.right-login a:hover {
+  text-decoration: underline;
+}
+
+
+/* home page */
+.home{
+  width: 100%;
+  height: 100%;
+  background: rgba(190, 206, 198, 0.13); 
+}
+.graphnWeather{
+  display: flex;
+  margin-left: 250px;
+}
+.weatherBox {
+  height: 300px;
+  width: 250px;
+  /* Remove the second 'height' declaration */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 30px;
+  border-radius: 10px;
+  /* Add background-size and background-position */
+  background-image: url('images/weather.png');
+  background-size: cover; /* Adjust the background size */
+  background-position: center center; 
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.counts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.counts > div {
+  width: calc(33.33% - 10px); 
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: #fff; 
+  font-size: 20px; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.counts > div:nth-child(1) {
+  background: rgba(246, 200, 82, 0.65);
+}
+
+.counts > div:nth-child(2) {
+  background: #E8FDF2;
+  color: #6A7770;
+}
+
+.counts > div:nth-child(3) {
+  background: #6A7770;
+}
+
+.counts > div:nth-child(4) {
+  background: #FFF;
+  color: #6A7770;
+}
+
+.counts > div:nth-child(5) {
+  background: rgba(123, 150, 212, 0.67);
+}
+
+/* Special style for the last box */
+.counts > div:last-child {
+  align-self: flex-end;
+  /* Add margin-top: auto to align it at the bottom */
+  margin-top: auto;
+}
+
+
+/* header page */
+
+header{
+  height: 75px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 2px solid #d8dfe3;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.account-info img {
+  width: 50px; 
+  height: 50px; 
+  margin-right: 10px; 
+  cursor: pointer;
+}
+.dropdown {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 155px;
+  width: 150px;
+  padding-left: 20px;
+  font-family: Jaldi;
+  color: #454d49;
+}
+.dropdown button:hover {
+  background-color: #f9f9f9;
+}
+.dropdown p {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.dropdown p:hover {
+  background-color: #f9f9f9;
+}
+/* charts component */
+.charts{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+ .line{
+  width: 600px;
+  background: white;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.doughnut{
+  width: 450px;
+  margin-left: 50px;
+}
+/* Nav component */
+
+.sideBar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 200px;
+  height: 100vh;
+  flex-shrink: 0;
+  border-right: 2px solid #BECEC6;
+ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.sideBar h1{
+  color: #6A7770;
+  font-family: Leckerli One;
+  font-size: 38px;
+}
+.options{
+  margin-top: 150px;
+}
+.options li{
+  list-style: none;
+}
+.options ul li a{
+  width: 160px;
+  height: 45px;
+  flex-shrink: 0;
+  list-style: none;
+  border-radius: 20px 0px 0px 20px;
+  background: #6A7770;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+ 
+}
+.options a{
+  color: #FFF;
+  font-family: Jaldi;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+.options a.active{
+  background: #7B96D4;
+}
+
+
+/* journal page */
+.mainJournal{
+  width: 100%;
+  height: 100%;
+}
+.mainJournal h1{
+  color: rgb(66, 79, 66);
+}
+.howareyou{
+   font-family: IM FELL Great Primer SC;
+   font-size: 40px;
+   text-align: left;
+   margin-left: 270px;
+}
+.journal{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 50px;
+  margin-top: 20px;
+  background: rgba(190, 206, 198, 0.13);
+}
+.journalEntry{
+  margin-left: 280px;
+}
+.journalList{
+  width: 480px;
+  padding: 20px;
+  background: rgba(120, 134, 127, 0.981);
+  height: auto;
+}
+.eachJournal{
+  width: 400px;
+  height: 100%;
+  padding: 50px;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+  min-width: 400px;
+  border: black 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  line-height: 1.5;
+}
+
+
+.eachJournal p{
+  max-width: 100%;
+  overflow-wrap: break-word;
+  margin: 10px;
+  padding-bottom: 50px;
+}
+.journalStack{
+  height: 650px;
+}
+.journalListMain{
+  height: 600px;
+  width: 100%;
+}
+.p-5{
+  background: #7B96D4;
+  color: white;
+  border: black 2px solid;
+}
+.notebook-input textarea{
+  box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.3);
+}
+.notebook-input button{
+  background: gray;
+  width: 100px;
+  height: 30px;
+  color: white;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.journalEntry select{
+  height: 30px;
+}
+.randomQuotes{
+  background: rgb(120, 139, 120);
+  height: 250px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+  padding-top: 10px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+.randomQuotes h1{
+  color: white;
+  
+}
+/* moods page */
+
+
+
+
+
