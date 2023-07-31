@@ -40,12 +40,12 @@ export default function Home() {
       const region = response.data.location.region
       const img = `https:${response.data.current.condition.icon}`; // Add the base URL to the relative path
 
-      setLocationInfo(`
-        Today's Forecast<br/>
-        ${temperature} °<br />
-        ${city}<br />
-        region: ${region}<br />
-        <img src="${img}" alt="Weather Icon" />
+      setLocationInfo(`<div class='weatherMain'>
+        <p>Today's Forecast</p><br/>
+        <img class='weather-icon' src="${img}" alt="Weather Icon" />
+        <h1>${temperature}°</h1> <br />
+        <h2> ${city}</h2><br />
+        </div>
       `);
     } catch (error) {
       console.error('Error fetching weather data:', error);

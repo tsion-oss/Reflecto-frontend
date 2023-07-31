@@ -7,7 +7,7 @@ import Journal from './Journal'
 export default function Nav() {
     return (
       <div className='sideBar'>
-        <h1>Reflecto</h1>
+        <NavLink style={{ textDecoration: 'none' }} to='/home'><h1>Reflecto</h1></NavLink>
         <div className='options'>
           <ul>
             <li>

@@ -137,18 +137,19 @@ textarea:focus{
 }
 .weatherBox {
   height: 300px;
-  width: 250px;
+  width: 280px;
   /* Remove the second 'height' declaration */
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  margin-left: 30px;
+  margin-left: 50px;
   border-radius: 10px;
   /* Add background-size and background-position */
-  background-image: url('images/weather.png');
-  background-size: cover; /* Adjust the background size */
-  background-position: center center; 
+  /* background-image: url('images/weather.png'); */
+  background-size: cover; 
+  background-position: center center;  
+   background-color: #8ca096;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -158,7 +159,7 @@ textarea:focus{
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 90px;
 }
 
 .counts > div {
@@ -184,7 +185,7 @@ textarea:focus{
 }
 
 .counts > div:nth-child(3) {
-  background: #6A7770;
+  background-color: #8ca096;
 }
 
 .counts > div:nth-child(4) {
@@ -196,11 +197,37 @@ textarea:focus{
   background: rgba(123, 150, 212, 0.67);
 }
 
-/* Special style for the last box */
 .counts > div:last-child {
   align-self: flex-end;
-  /* Add margin-top: auto to align it at the bottom */
   margin-top: auto;
+}
+.weatherMain img{
+  width: 160px;
+  position: relative;
+  top: 70px;
+}
+.weatherMain p{
+  position: relative;
+  top: 115px;
+  right: 10px;
+  font-size: 18px;
+  color:white;
+  font-family: JetBrains Mono;
+}
+.weatherMain h1{
+  font-size: 60px;
+  position: relative;
+  bottom: 40px;
+  left: 50px;
+  color: white;
+  font-family: Jua;
+}
+.weatherMain h2{
+  position: relative;
+  bottom: 90px;
+  right: 40px;
+  color:white;
+  font-family: JetBrains Mono;
 }
 
 
@@ -322,6 +349,7 @@ header{
 .mainJournal{
   width: 100%;
   height: 100%;
+  background: rgba(190, 206, 198, 0.13);
 }
 .mainJournal h1{
   color: rgb(66, 79, 66);
@@ -338,7 +366,7 @@ header{
   display: flex;
   gap: 50px;
   margin-top: 20px;
-  background: rgba(190, 206, 198, 0.13);
+  
 }
 .journalEntry{
   margin-left: 280px;
@@ -383,17 +411,19 @@ header{
   background: #7B96D4;
   color: white;
   border: black 2px solid;
+  width: 370px;
 }
 .notebook-input textarea{
   box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.3);
 }
 .notebook-input button{
-  background: gray;
+  background: white;
   width: 100px;
   height: 30px;
-  color: white;
   font-size: 15px;
   margin-top: 10px;
+  border: 1px solid lightgray;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
 }
 .journalEntry select{
   height: 30px;
@@ -411,8 +441,70 @@ header{
   
 }
 /* moods page */
+.mainMood{
+  background: rgba(190, 206, 198, 0.13);
+  width: 100%;
+  height: 100%;
+}
 
-
+.mood-button{
+  width: 70px;
+  height: 60px;
+  margin-left: 5px;
+  background-color: #6A7770;
+  border: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
+}
+.biggerEmojiButton{
+  font-size: 36px;
+}
+.mood{
+  margin-top: 100px;
+  margin-left: 200px;
+  height: 100%;
+}
+.mood-input{
+  width: 350px;
+  height: 120px;
+  padding: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+.mood-inputNbutton{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.mood-inputNbutton button{
+  background: white;
+  margin-top: 10px;
+  width: 100px;
+  height: 32px;
+  border: 1px solid lightgray;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.mainMoodList{
+  width: 800px;
+  margin-left: 130px;
+  margin-top: 100px;
+  background-color: #7b96d446;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+}
+.mood-list{
+  width: 700px;
+}
+.eachMood{
+  height: 150px;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+}
 
 
 

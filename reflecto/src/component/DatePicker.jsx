@@ -6,8 +6,11 @@ import 'react-clock/dist/Clock.css';
 
 export default function DatePicker({ value, onChange }) {
   return (
-    <div className='p-5'   >
-      <DateTimePicker value={value} onChange={onChange} />
+    <div    >
+      <DateTimePicker 
+      value={value} 
+      onChange={onChange}
+      className='p-5' />
     </div>
   );
 }

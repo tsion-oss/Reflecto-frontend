@@ -23,7 +23,7 @@ export default function Login() {
      console.log(userInfo)
    
     localStorage.setItem('jwtToken', JSON.stringify(userInfo))
-    // window.location.href = '/home'
+    window.location.href = '/home'
 
   
   };

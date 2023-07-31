@@ -159,7 +159,6 @@ export default function Mood() {
     marginRight: '10px',
     border: '1px solid #ccc',
     padding: '10px',
-    backgroundColor: 'lightblue'
   };
 
   const handleLogout = () => {
@@ -168,48 +167,61 @@ export default function Mood() {
   }
 
   return (
-    <div>
+    <div className="mainMood">
        <Nav/>
       <Header/>
-      <div>
-        {moodOptions.map((emoji) => (
-          <button
-            key={emoji}
-            className={`mood-button ${selectedMood === emoji ? 'selected' : ''}`}
-            onClick={() => handleMoodClick(emoji)} // Pass the selected emoji to the function
-          >
-            {emoji}
-          </button>
-        ))}
-      </div>
-      <form onSubmit={(e) => { e.preventDefault(); postMood(); }}>
-        <DatePicker value={selectedDate} onChange={setSelectedDate} />
-        <input
-          type="text"
-          value={note}
-          onChange={(e) => setNote(e.target.value)}
-          placeholder="Write a note about your mood..."
-        />
-        <button type="submit">Submit</button>
-      </form>
-      <h2>{quote}</h2>
-      <div style={moodListContainerStyles}>
-        {mood.slice().reverse().map((mod) => (
-          <div key={mod._id} style={moodEntryStyles}>
-            <p>{new Date(mod.date).toLocaleString('en-US', {
-              year: 'numeric',
-              month: '2-digit',
-              day: '2-digit',
-              hour: 'numeric',
-              minute: 'numeric',
-              hour12: true,
-            })}</p>
-            <p>{mod.emoji}</p> {/* Display mood as emoji */}
-            <p>{mod.note}</p>
-            <button onClick={() => deleteMood(mod._id)}>delete</button>
-          </div>
-        ))}
-      </div>
+        <div className="mood">
+            <div>
+              {moodOptions.map((emoji) => (
+              <button
+              key={emoji}
+              className={`mood-button ${selectedMood === emoji ? 'selected' : ''} biggerEmojiButton`}
+              onClick={() => handleMoodClick(emoji)} // Pass the selected emoji to the function
+            >
+              {emoji}
+            </button>
+              ))}
+            </div>
+            <form onSubmit={(e) => { e.preventDefault(); postMood(); }}>
+              <DatePicker value={selectedDate} 
+              onChange={setSelectedDate}
+              className="date-picker" />
+               <div className="mood-inputNbutton">           
+                  <input
+                    type="text"
+                    value={note}
+                    onChange={(e) => setNote(e.target.value)}
+                    placeholder="Write a note about your mood..."
+                    className="mood-input"
+                  />
+                  <button type="submit">Submit</button>
+               </div>  
+            </form>
+            <h2>{quote}</h2>
+               <div className="mainMoodList">
+                  <div style={moodListContainerStyles}
+                        className="mood-list">
+                    {mood.slice().reverse().map((mod) => (
+                      <div key={mod._id} 
+                          style={moodEntryStyles}
+                          className="eachMood"
+                      >
+                        <p>{new Date(mod.date).toLocaleString('en-US', {
+                          year: 'numeric',
+                          month: '2-digit',
+                          day: '2-digit',
+                          hour: 'numeric',
+                          minute: 'numeric',
+                          hour12: true,
+                        })}</p>
+                        <p>{mod.emoji}</p> {/* Display mood as emoji */}
+                        <p>{mod.note}</p>
+                        <button onClick={() => deleteMood(mod._id)}>delete</button>
+                      </div>
+                    ))}
+                  </div>
+             </div>
+        </div>
     </div>
   );
 }

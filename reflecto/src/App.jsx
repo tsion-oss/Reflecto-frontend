@@ -16,7 +16,7 @@ function App() {
     // Load the Google Font using webfontloader
     WebFont.load({
       google: {
-        families: ['Leckerli One', 'Amita', 'IM Fell Great Primer SC', 'Jaldi']
+        families: ['Leckerli One', 'Amita', 'IM Fell Great Primer SC', 'Jaldi', 'JetBrains Mono', 'Jua']
       }
     });
   }, []);

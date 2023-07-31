@@ -63,7 +63,7 @@ export default function MoodGraph() {
           const moodIndex = moods.indexOf(mood);
           return moodIndex !== -1 ? moodIndex : null; // Set null for dates without mood data
         }),
-        borderColor: "#6A7770", // Replace with desired border color
+        borderColor: "#7B96D4", // Replace with desired border color
        // Replace with desired background color
         fill: true
       },
@@ -102,6 +102,7 @@ export default function MoodGraph() {
           maxRotation: 45,
 
         },
+       
       },
       y: {
         
@@ -112,8 +113,26 @@ export default function MoodGraph() {
           },
           color: 'gray'
         },
+        grid: {
+          display: false
+        },
         min: 0, // Set the y-axis minimum value to 0
         max: moods.length - 1, // Set the y-axis maximum value to the index of the last mood
+      },
+    },
+    elements: {
+      point: {
+        radius: 0, // Set the radius of the data points to 0 to hide them
+      },
+    },
+    plugins: {
+      fill: {
+        fill: {
+          target: "origin",
+          above: "blue", 
+          below: "rgba(0, 0, 255, 0.5)", 
+        }
+
       },
     },
   };
