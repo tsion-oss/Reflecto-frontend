@@ -7,7 +7,10 @@ import Journal from './Journal'
 export default function Nav() {
     return (
       <div className='sideBar'>
-        <NavLink style={{ textDecoration: 'none' }} to='/home'><h1>Reflecto</h1></NavLink>
+        <div>
+              <NavLink style={{ textDecoration: 'none' }} to='/home'><h1>Reflecto</h1></NavLink>
+         </div>
+        
         <div className='options'>
           <ul>
             <li>
@@ -21,6 +24,11 @@ export default function Nav() {
             </li>
           </ul>
         </div>
+       
+        <div className="navUserSettingContainer">
+        <NavLink className='navUserSetting' to='/usersetting'>User setting</NavLink>
+      </div>
+      
       </div>
     );
   }

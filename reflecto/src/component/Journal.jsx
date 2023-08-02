@@ -61,6 +61,21 @@ const Journal = () => {
     date: '',
     content: '',
   });
+
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme === 'none') {
+      document.documentElement.style.setProperty('--background-image', 'none');
+      document.documentElement.style.setProperty('--background-color', 'rgba(190, 206, 198, 0.2)');
+    } else if (savedTheme) {
+      document.documentElement.style.setProperty('--background-image', `url(${savedTheme})`);
+      document.documentElement.style.setProperty('--background-color', '');
+    }
+  }, []);
+  
+
+
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
   const getAxiosInstance = () => {
@@ -149,8 +164,15 @@ const Journal = () => {
   
 //  delete function
 
-const deleteJournal = (journalId) => {
-  const response = axios.delete(`http//localhost:3001/api/journal/${journalId}`)
+
+const deleteJournal = async (journalId) => {
+  console.log(journalId)
+  try{
+ await getAxiosInstance().delete(`/journal/${journalId}`)
+  setJournal(journal.filter((jo) => jo._id !== journalId))
+  }catch(error) {
+  console.log('Error deleting journal', error.message)
+  }
 }
 
 useEffect(() =>  {
@@ -175,7 +197,7 @@ const [editingIndex, setEditingIndex] = useState(-1);
   const handleUpdateJournal = async (e, journalId) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3001/api/journal/${journalId}`, {
+      await getAxiosInstance().put(`/journal/${journalId}`, {
         content: editedContent, 
       });
       setEditingIndex(-1); 
@@ -222,7 +244,7 @@ const [editingIndex, setEditingIndex] = useState(-1);
                   padding: '15px',
                   border: '1px solid #ccc',
                   background: 'white',
-                  width: '340px'
+                  width: '340px',
                 }}
               />
               <button type="submit">Submit</button>
@@ -262,6 +284,9 @@ const [editingIndex, setEditingIndex] = useState(-1);
                           border: '1px solid #ccc',
                           background: 'white',
                           width: '340px',
+                          marginTop: '-350px',
+                          height: '400px',
+                          border: 'none'
                         }}
                       />
                       <div>
@@ -277,6 +302,7 @@ const [editingIndex, setEditingIndex] = useState(-1);
                       <p className="index">{journal.length - index - 1 + 1}</p>
                     </div>
                   )}
+                  <button onClick={() => deleteJournal(journ._id)}>I don't want to remember this</button>
                 </div>
               ))}
             </div>

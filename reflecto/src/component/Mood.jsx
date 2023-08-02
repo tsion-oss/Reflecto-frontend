@@ -11,6 +11,19 @@ export default function Mood() {
   const [selectedMood, setSelectedMood] = useState('');
   const [quote, setQuote] = useState('');
 
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme === 'none') {
+      document.documentElement.style.setProperty('--background-image', 'none');
+      document.documentElement.style.setProperty('--background-color', 'rgba(190, 206, 198, 0.2)');
+    } else if (savedTheme) {
+      document.documentElement.style.setProperty('--background-image', `url(${savedTheme})`);
+      document.documentElement.style.setProperty('--background-color', '');
+    }
+  }, []);
+
+
   const getAxiosInstance = () => {
     return axios.create({
       baseURL: 'http://localhost:3001/api',
@@ -55,6 +68,7 @@ export default function Mood() {
   };
 
   const deleteMood = async (moodId) => {
+   
     try {
       await getAxiosInstance().delete(`/mood/${moodId}`);
       setMood(mood.filter((moo) => moo._id !== moodId));
@@ -216,7 +230,15 @@ export default function Mood() {
                         })}</p>
                         <p>{mod.emoji}</p> {/* Display mood as emoji */}
                         <p>{mod.note}</p>
-                        <button onClick={() => deleteMood(mod._id)}>delete</button>
+                        <button 
+                        style={{ background:'none',         
+                        border: 'none',
+                        position: 'relative', 
+                        left: '70px',
+                        top: '30px',
+                        cursor: 'pointer',
+                        color: 'gray'}}
+                        onClick={() => deleteMood(mod._id)}>Remove</button>
                       </div>
                     ))}
                   </div>

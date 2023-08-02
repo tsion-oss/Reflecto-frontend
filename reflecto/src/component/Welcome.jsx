@@ -7,6 +7,8 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+
+  // Function to handle the login form submission
   const handleLogin =  async (e) => {
     e.preventDefault()
     console.log(username)

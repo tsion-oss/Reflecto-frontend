@@ -8,6 +8,10 @@ export default function Header() {
         localStorage.removeItem('jwtToken')
          window.location.href = '/'
       }
+ 
+ const toUserSetting = () => {
+    window.location.href = '/usersetting'
+ }
 
 const toggleDropdown = () => {
   setShowDropdown(!showDropdown)
@@ -20,6 +24,7 @@ const toggleDropdown = () => {
         </div>
         {showDropdown && <div className="dropdown" id="dropdown">
            <p onClick={handleLogout}>Logout</p>
+           <p onClick={toUserSetting} >User Setting</p>
         </div>}
       </header>
     )
