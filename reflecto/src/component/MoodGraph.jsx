@@ -16,19 +16,19 @@ export default function MoodGraph() {
       .then((response) => {
         if (response.data && Array.isArray(response.data)) {
           setMoodData(response.data);
-          setLoading(false); // Set loading to false when data is fetched
+          setLoading(false); 
         } else {
           console.error('Invalid API response:', response.data);
-          setLoading(false); // Set loading to false in case of error
+          setLoading(false); 
         }
       })
       .catch((error) => {
         console.error('Error fetching mood data:', error);
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false); 
       });
   }, []);
 
-  // If data is not yet loaded, show the loading message
+ 
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -40,12 +40,12 @@ export default function MoodGraph() {
     moodDataByDate[date] = entry.mood;
   });
 
-  // Get the last 7 days from the moodDataByDate object
+  //  the last 7 days from the moodDataByDate object
   const last7Days = Object.keys(moodDataByDate)
     .sort((a, b) => new Date(a) - new Date(b))
     .slice(-7);
 
-  // Prepare data for the Line Chart
+  // data for the Line Chart
   const lineChartData = {
     labels: last7Days.map((dateString) => {
       const dateObj = new Date(dateString);
@@ -61,10 +61,9 @@ export default function MoodGraph() {
         data: last7Days.map((date) => {
           const mood = moodDataByDate[date];
           const moodIndex = moods.indexOf(mood);
-          return moodIndex !== -1 ? moodIndex : null; // Set null for dates without mood data
+          return moodIndex !== -1 ? moodIndex : null; 
         }),
-        borderColor: "#7B96D4", // Replace with desired border color
-       // Replace with desired background color
+        borderColor: "#7B96D4", 
         fill: true
       },
     ],
@@ -73,7 +72,7 @@ export default function MoodGraph() {
   // Calculate mood counts for Doughnut chart
   const moodCounts = moods.map((mood) => moodData.filter((entry) => entry.mood === mood).length);
 
-  // Prepare data for the Doughnut Chart
+  // data for the Doughnut Chart
   const doughnutChartData = {
     labels: moods,
     datasets: [

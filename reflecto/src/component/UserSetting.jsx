@@ -43,9 +43,19 @@ const UserSetting = ({ setIsLoggedIn }) => {
 
     }
     
-    // Store the selected theme in local storage
+  
     localStorage.setItem('selectedTheme', themeUrl);
   };
+
+
+
+  useEffect(() => {
+   
+    const userInfo = JSON.parse(localStorage.getItem('jwtToken'));
+    if (userInfo) {
+      setUserData(userInfo);
+    }
+  }, []);
 
 
   const handleChange = (e) => {
@@ -65,8 +75,8 @@ const UserSetting = ({ setIsLoggedIn }) => {
 
   const handleLogout = () => {
     localStorage.removeItem('jwtToken');
-    setIsLoggedIn(false);
-    navigate('/');
+    setIsLoggedIn(false)
+    navigate('/')
   };
 
   const navigate = useNavigate();
@@ -145,7 +155,6 @@ const UserSetting = ({ setIsLoggedIn }) => {
               <button onClick={() => handleThemeChange(themeThree)}>
                 <img src={themeThree} alt="Theme 3" />
               </button>
-              {/* Add more theme buttons as needed */}
             </div>
           </div>
         )}

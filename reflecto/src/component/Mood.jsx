@@ -12,14 +12,15 @@ export default function Mood() {
   const [quote, setQuote] = useState('');
 
 
+  //set background theme based on saved theme
   useEffect(() => {
-    const savedTheme = localStorage.getItem('selectedTheme');
+    const savedTheme = localStorage.getItem('selectedTheme')
     if (savedTheme === 'none') {
-      document.documentElement.style.setProperty('--background-image', 'none');
-      document.documentElement.style.setProperty('--background-color', 'rgba(190, 206, 198, 0.2)');
+      document.documentElement.style.setProperty('--background-image', 'none')
+      document.documentElement.style.setProperty('--background-color', 'rgba(190, 206, 198, 0.2)')
     } else if (savedTheme) {
-      document.documentElement.style.setProperty('--background-image', `url(${savedTheme})`);
-      document.documentElement.style.setProperty('--background-color', '');
+      document.documentElement.style.setProperty('--background-image', `url(${savedTheme})`)
+      document.documentElement.style.setProperty('--background-color', '')
     }
   }, []);
 
@@ -53,7 +54,7 @@ export default function Mood() {
             emoji = '😢';
             break;
           default:
-            emoji = ''; // You can set a default value if needed
+            emoji = ''; 
             break;
         }
         return {
@@ -67,56 +68,60 @@ export default function Mood() {
     }
   };
 
+
+    // Delete a mood entry
   const deleteMood = async (moodId) => {
    
     try {
-      await getAxiosInstance().delete(`/mood/${moodId}`);
-      setMood(mood.filter((moo) => moo._id !== moodId));
+      await getAxiosInstance().delete(`/mood/${moodId}`)
+      setMood(mood.filter((moo) => moo._id !== moodId))
     } catch (error) {
-      console.error('Error deleting mood', error.message);
+      console.error('Error deleting mood', error.message)
     }
   };
 
   useEffect(() => {
-    getMoods();
-  }, []);
+    getMoods()
+  }, [])
 
+
+   // Handle clicking on a mood emoji
   const handleMoodClick = (emoji) => {
     let moodString = '';
     switch (emoji) {
       case '😃':
-        moodString = 'Happy';
+        moodString = 'Happy'
         break;
       case '😊':
-        moodString = 'Smiling';
+        moodString = 'Smiling'
         break;
       case '😐':
-        moodString = 'Neutral';
+        moodString = 'Neutral'
         break;
       case '😔':
-        moodString = 'Sad';
+        moodString = 'Sad'
         break;
       case '😢':
-        moodString = 'Crying';
+        moodString = 'Crying'
         break;
       default:
-        moodString = ''; // You can set a default value if needed
+        moodString = ''
         break;
     }
 
-    setSelectedMood(moodString);
-    const quote = getRandomQuote(moodString);
+    setSelectedMood(moodString)
+    const quote = getRandomQuote(moodString)
     setQuote(quote);
   };
 
   const postMood = async () => {
-    // Check if a mood is selected
+    
     if (!selectedMood) {
-      alert("Please select a mood before submitting.");
+      alert("Please select a mood before submitting.")
       return;
     }
 
-    // Check if a mood entry already exists for the selected date
+   
     if (isMoodAlreadySelected()) {
       alert("You have already selected a mood for this day.");
       return;
@@ -133,7 +138,7 @@ export default function Mood() {
 
       setNote('');
 
-      // Refresh the mood data after posting the new entry
+      
       getMoods();
     } catch (error) {
       console.error('Error posting mood', error.message);
@@ -149,9 +154,6 @@ export default function Mood() {
     });
   };
 
-  const getRandomQuote = (selectedMood) => {
-    // ... Your getRandomQuote function here ...
-  };
 
   const moodOptions = [
     '😃', // Happy
@@ -190,7 +192,7 @@ export default function Mood() {
               <button
               key={emoji}
               className={`mood-button ${selectedMood === emoji ? 'selected' : ''} biggerEmojiButton`}
-              onClick={() => handleMoodClick(emoji)} // Pass the selected emoji to the function
+              onClick={() => handleMoodClick(emoji)}
             >
               {emoji}
             </button>
@@ -228,7 +230,7 @@ export default function Mood() {
                           minute: 'numeric',
                           hour12: true,
                         })}</p>
-                        <p>{mod.emoji}</p> {/* Display mood as emoji */}
+                        <p>{mod.emoji}</p>
                         <p>{mod.note}</p>
                         <button 
                         style={{ background:'none',         

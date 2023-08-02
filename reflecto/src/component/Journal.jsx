@@ -52,6 +52,25 @@ const Journal = () => {
     { label: 'Myriad Pro', value: 'Myriad Pro, sans-serif' },
     { label: 'Didot', value: 'Didot, serif' },
   ];
+
+
+  const inspirationalQuotes = [
+    "The only way out is through. - Robert Frost",
+    "Every moment is a fresh beginning. - T.S. Eliot",
+    "It's okay not to be okay. It's okay to ask for help. - Unknown",
+    "You are stronger than you think. - Unknown",
+    "The future depends on what you do today. - Mahatma Gandhi",
+    "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart. - Roy T. Bennett",
+    "Do not anticipate trouble, or worry about what may never happen. Keep in the sunlight. - Benjamin Franklin",
+    "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+    "The only person you should try to be better than is the person you were yesterday. - Unknown",
+    "Believe you can and you're halfway there. - Theodore Roosevelt",
+    "You may not control all the events that happen to you, but you can decide not to be reduced by them. - Maya Angelou",
+    // "The most beautiful people we have known are those who have known defeat, known suffering, known struggle, known loss, and have found their way out of the depths. These persons have an appreciation, a sensitivity, and an understanding of life that fills them with compassion, gentleness, and a deep loving concern. Beautiful people do not just happen. - Elisabeth Kübler-Ross",
+    "You don't have to be perfect to be amazing. - Unknown",
+    "The present moment is filled with joy and happiness. If you are attentive, you will see it. - Thích Nhất Hạnh",
+    "Just when the caterpillar thought the world was over, it became a butterfly. - Anonymous"
+  ];
   
   
   const [selectedFont, setSelectedFont] = useState(fontOptions);
@@ -87,7 +106,7 @@ const Journal = () => {
   const fetchJournals = async () => {
     try {
       const response = await getAxiosInstance().get('/journal');
-      setJournal(response.data.reverse()); // Reverse the order to show the latest entry first
+      setJournal(response.data.reverse()); 
     } catch (error) {
       console.error('Error fetching journals', error.message);
     }
@@ -128,19 +147,21 @@ const Journal = () => {
 
       setEntry({ date: '', content: '' });
       setSelectedDate(new Date());
-      fetchJournals(); // Refresh the journal list after submitting a new entry
+      fetchJournals(); 
     } catch (error) {
       console.error('Error', error.message);
     }
   };
 
+  //Calculate z-index for journal entry stacking
   const getZIndex = (index) => {
-    const reversedIndex = journal.length - index - 1; // Reverse the order
+    const reversedIndex = journal.length - index - 1; 
     if (currentPageIndex === index) {
-      return journal.length + 1; // Put the current page on top
+      return journal.length + 1; 
     }
-    return reversedIndex; // For other entries, stack them based on the reversed index
+    return reversedIndex;
   };
+
 
   const handleNextPage = () => {
     setCurrentPageIndex((prevIndex) => Math.min(prevIndex + 1, journal.length - 1));
@@ -182,18 +203,22 @@ useEffect(() =>  {
 const [editingIndex, setEditingIndex] = useState(-1);
   const [editedContent, setEditedContent] = useState('');
 
-  // ... (existing code)
 
+//handle clicking edit for a journal entry 
   const handleEditClick = (index, content) => {
     setEditingIndex(index);
     setEditedContent(content);
   };
 
+
+//handle canceling edit mode for a journal entry
   const handleCancelEdit = () => {
     setEditingIndex(-1);
     setEditedContent('');
   };
 
+  
+  //handle updating a jouranl entry
   const handleUpdateJournal = async (e, journalId) => {
     e.preventDefault();
     try {
@@ -208,7 +233,16 @@ const [editingIndex, setEditingIndex] = useState(-1);
     }
   };
 
+  const [randomQuote, setRandomQuote] = useState('')
 
+  const generateRandomQuote = () => {
+     const randomIndex = Math.floor(Math.random() * inspirationalQuotes.length)
+     setRandomQuote(inspirationalQuotes[randomIndex])
+  }
+
+ useEffect(() => {
+  generateRandomQuote()
+ }, [])
   
   return (
     <div className="mainJournal">
@@ -253,7 +287,8 @@ const [editingIndex, setEditingIndex] = useState(-1);
           </form>
 
           <div className='randomQuotes'>
-            <h1>Random quotes</h1>
+                <h3 className="quote">{randomQuote}</h3>
+
           </div>
         </div>
       <div className="journalListMain">
@@ -270,7 +305,7 @@ const [editingIndex, setEditingIndex] = useState(-1);
                 >
                   <p style={{ textAlign: 'right', marginTop: '-10px' }}>{journ.date}</p>
                   <br />
-                  {editingIndex === index ? ( // If the entry is being edited, show the textarea
+                  {editingIndex === index ? ( 
                     <form onSubmit={(e) => handleUpdateJournal(e, journ._id)}>
                       <textarea
                         value={editedContent}

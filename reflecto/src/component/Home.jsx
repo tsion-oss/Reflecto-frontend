@@ -82,6 +82,9 @@ export default function Home() {
     setLocationInfo(`Error getting geolocation: ${error.message}`);
   }
 
+
+
+   // Function to fetch and update mood counts
   async function getMoodCounts() {
     try {
       const response = await axios.get('http://localhost:3001/api/mood');
@@ -101,7 +104,7 @@ export default function Home() {
         }
       });
 
-      // Now moodCounts object contains the mood counts
+    
       setMoodCounts(moodCounts);
     } catch (error) {
       console.error('Error fetching mood records:', error);
