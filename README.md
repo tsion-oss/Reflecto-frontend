@@ -7,6 +7,8 @@
 
 Reflecto is a user-friendly Mood Journaling app designed to empower users to track, analyze, and reflect on their emotions and mental well-being. With Reflecto, users can log their daily moods, write journal entries, and gain insights into their emotional patterns over time. The app aims to provide a safe space for self-reflection and personal growth.
 
+![Project Logo](images/screenshot1.png)
+
 ## Key Features
 
 
