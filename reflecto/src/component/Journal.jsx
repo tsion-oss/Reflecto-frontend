@@ -5,6 +5,8 @@ import axios from 'axios';
 import DatePicker from './DatePicker';
 import Nav from './Nav';
 import Header from './Header';
+import logout from '../images/logout.png'
+import { NavLink } from 'react-router-dom';
 
 const styles = `
   .horizontalScrollContainer {
@@ -243,11 +245,78 @@ const [editingIndex, setEditingIndex] = useState(-1);
  useEffect(() => {
   generateRandomQuote()
  }, [])
+
+
+
+
+
+
+  // for the menu toggle
+
+  const [showOptions, setShowOptions] = useState(false)
+
+  const toggle = () => {
+     setShowOptions(!showOptions)
+  }
+
+  // for the setting drop down
+
+  const [showDropdown, setShowDropdown] = useState(false)
+
+  const handleLogout = () => {
+         localStorage.removeItem('jwtToken')
+          window.location.href = '/'
+       }
+  
+  const toUserSetting = () => {
+     window.location.href = '/usersetting'
+  }
+ 
+ const toggleDropdown = () => {
+   setShowDropdown(!showDropdown)
+ }
   
   return (
     <div className="mainJournal">
-       <Nav />
-      <Header />
+     
+     <div className="home-toggle">
+             <div>
+                <button onClick={toggle}>toggle</button>
+              </div>
+
+              <div className="account-info" 
+                   onClick={toggleDropdown}>
+                    <img style={{ width: '50px' }} src={logout} />
+               </div>
+                  
+             
+        </div>
+               {showDropdown &&
+               <div className="dropdown" id="dropdown">
+                    <p onClick={handleLogout}>Logout</p>
+                    <p onClick={toUserSetting} >User Setting</p>
+                </div>}
+        
+               {showOptions && ( 
+                  <div className='options'>
+                      <ul>
+                        <li>
+                          <NavLink to='/home' activeClassName="active">My Reflection</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to='/mood' activeClassName="active">My Moods</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to='/journal' activeClassName="active">My Journals</NavLink>
+                        </li>
+                      </ul>
+                    </div>
+               )}
+
+     <div className="navNHeader">
+        <Nav className='homeNav'/>
+        <Header/>
+      </div>
       <style>{styles}</style>
       <h1 className='howareyou'>How are you?    {userr.username}</h1>
       <div className="journal">
@@ -337,7 +406,10 @@ const [editingIndex, setEditingIndex] = useState(-1);
                       <p className="index">{journal.length - index - 1 + 1}</p>
                     </div>
                   )}
-                  <button onClick={() => deleteJournal(journ._id)}>I don't want to remember this</button>
+                  <button
+                   style={{ background:  'rgba(120, 134, 127, 0.5)',
+                  cursor: 'pointer' }}
+                   onClick={() => deleteJournal(journ._id)}>Erase from history</button>
                 </div>
               ))}
             </div>

@@ -3,6 +3,8 @@ import axios from 'axios';
 import DatePicker from "./DatePicker";
 import Nav from './Nav'
 import Header from "./Header";
+import { NavLink } from "react-router-dom";
+import logout from '../images/logout.png'
 
 export default function Mood() {
   const [mood, setMood] = useState([]);
@@ -182,10 +184,76 @@ export default function Mood() {
      window.location.href = '/'
   }
 
+
+
+
+
+  // for the menu toggle
+
+  const [showOptions, setShowOptions] = useState(false)
+
+  const toggle = () => {
+     setShowOptions(!showOptions)
+  }
+
+  // for the setting drop down
+
+  const [showDropdown, setShowDropdown] = useState(false)
+
+  
+  const toUserSetting = () => {
+     window.location.href = '/usersetting'
+  }
+ 
+ const toggleDropdown = () => {
+   setShowDropdown(!showDropdown)
+ }
+  
+
   return (
     <div className="mainMood">
-       <Nav/>
-      <Header/>
+
+<div className="home-toggle">
+             <div>
+                <button onClick={toggle}>toggle</button>
+              </div>
+
+              <div className="account-info" 
+                   onClick={toggleDropdown}>
+                    <img style={{ width: '50px' }} src={logout} />
+               </div>
+                  
+             
+        </div>
+               {showDropdown &&
+               <div className="dropdown" id="dropdown">
+                    <p onClick={handleLogout}>Logout</p>
+                    <p onClick={toUserSetting} >User Setting</p>
+                </div>}
+        
+               {showOptions && ( 
+                  <div className='options'>
+                      <ul>
+                        <li>
+                          <NavLink to='/home' activeClassName="active">My Reflection</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to='/mood' activeClassName="active">My Moods</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to='/journal' activeClassName="active">My Journals</NavLink>
+                        </li>
+                      </ul>
+                    </div>
+               )}
+        
+
+
+
+       <div className="navNHeader">
+        <Nav className='homeNav'/>
+        <Header/>
+      </div>
         <div className="mood">
             <div>
               {moodOptions.map((emoji) => (

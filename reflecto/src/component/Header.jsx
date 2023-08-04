@@ -1,5 +1,6 @@
 import { useState } from "react"
 import logout from '../images/logout.png'
+import Nav from '../component/Nav'
 
 export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false)

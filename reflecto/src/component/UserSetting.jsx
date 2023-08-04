@@ -6,7 +6,8 @@ import accIcon from '../images/accountIcon.png'
 import themeIcon from '../images/themeIcon.png'
 import themeOne from '../images/a.png'
 import themeTwo from '../images/b.png'
-import themeThree from '../images/c.jpg'
+import themeThree from '../images/books.png'
+import themeFour from '../images/d.png'
 
 const UserSetting = ({ setIsLoggedIn }) => {
   const [userData, setUserData] = useState({});
@@ -95,7 +96,9 @@ const UserSetting = ({ setIsLoggedIn }) => {
     <div className='userSettingMain'>
       <Header />
 
-      <h1>{userData.username} Account Settings</h1>
+      <h1 className='settingName'
+          style={{ fontFamily:'jaldi',
+                   textShadow:'2px 4px 2px rgba(255, 255, 255)' }}>{userData.username} Account Settings</h1>
       <div className='userSecondMain'>
       <div className='userSettingBox'>
         
@@ -154,6 +157,9 @@ const UserSetting = ({ setIsLoggedIn }) => {
               </button>
               <button onClick={() => handleThemeChange(themeThree)}>
                 <img src={themeThree} alt="Theme 3" />
+              </button>
+              <button onClick={() => handleThemeChange(themeFour)}>
+                <img src={themeFour} alt="Theme 3" />
               </button>
             </div>
           </div>
