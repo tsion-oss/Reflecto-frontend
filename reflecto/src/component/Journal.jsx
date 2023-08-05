@@ -7,6 +7,7 @@ import Nav from './Nav';
 import Header from './Header';
 import logout from '../images/logout.png'
 import { NavLink } from 'react-router-dom';
+import tog from '../images/toggle.png'
 
 const styles = `
   .horizontalScrollContainer {
@@ -280,10 +281,10 @@ const [editingIndex, setEditingIndex] = useState(-1);
     <div className="mainJournal">
      
      <div className="home-toggle">
-             <div>
-                <button onClick={toggle}>toggle</button>
+     <div className="toggleSecond">
+                <button onClick={toggle}><img src={tog}/></button>
+                <NavLink style={{ textDecoration: 'none' }} to='/home'><h2>Reflecto</h2></NavLink>
               </div>
-
               <div className="account-info" 
                    onClick={toggleDropdown}>
                     <img style={{ width: '50px' }} src={logout} />

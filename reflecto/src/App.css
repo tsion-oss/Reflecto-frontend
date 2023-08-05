@@ -143,21 +143,30 @@ body{
 div.weatherMain{
   width: 100%;
 } */
-/* .weatherBox {
-  height: 300px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  margin-left: 50px;
-  border-radius: 10px;
-  background-size: cover; 
-  background-position: center center;  
-   background-color: rgba(140, 160, 150, 0.6);
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-} */
+.weatherMain img{
+  width: 80px;
+  position: relative;
+  top: 50px;
+  left: 30px;
+}
+.weatherMain p{
+  font-family: JetBrains Mono;
+  font-size: 18px;
+  position: relative;
+  top: 50px;
+  right: 30px;
+}
+.weatherMain h1{
+  font-family: Jua;
+  font-size: 45px;
+  position: relative;
+  left: 60px;
+  bottom: 23px;
+}
+.weatherMain h2{
+  position: relative;
+  bottom: 40px;
+}
 .weatherBox{
   background-color: rgba(140, 160, 150, 0.6);
   border-radius: 10px;
@@ -166,6 +175,8 @@ div.weatherMain{
   align-items: center;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 4px 4px rgb(255, 255, 255, 0.6);
+  height: 300px;
 }
 
 
@@ -176,7 +187,7 @@ div.weatherMain{
 
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 425px) {
   .App{
     margin: 0;
     padding: 0;
@@ -190,6 +201,7 @@ div.weatherMain{
   .home{
     padding: 0;
     margin: 0;
+    width: 100%;
   }
   .home-toggle{
     display: flex;
@@ -198,7 +210,7 @@ div.weatherMain{
     background: white;
     padding: 0;
     margin: 0;
-    width: 100vw;
+    width: 100%;
   }
   .homeSecond{
     margin: 50px 5px;
@@ -292,7 +304,15 @@ div.weatherMain{
   margin-top: auto;
 }
 }
+
+
+
+
+
 @media screen and (min-width: 1024px) {
+div.home-toggle{
+  display: none;
+}
   #root {
   width: 100%;
   margin: 0 auto;

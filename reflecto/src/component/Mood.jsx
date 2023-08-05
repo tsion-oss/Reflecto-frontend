@@ -5,6 +5,7 @@ import Nav from './Nav'
 import Header from "./Header";
 import { NavLink } from "react-router-dom";
 import logout from '../images/logout.png'
+import tog from '../images/toggle.png'
 
 export default function Mood() {
   const [mood, setMood] = useState([]);
@@ -214,8 +215,9 @@ export default function Mood() {
     <div className="mainMood">
 
 <div className="home-toggle">
-             <div>
-                <button onClick={toggle}>toggle</button>
+      <div className="toggleSecond">
+                <button onClick={toggle}><img src={tog}/></button>
+                <NavLink style={{ textDecoration: 'none' }} to='/home'><h2>Reflecto</h2></NavLink>
               </div>
 
               <div className="account-info" 
