@@ -5,6 +5,7 @@ import Nav from './Nav'
 import Header from "./Header";
 import { NavLink } from "react-router-dom";
 import logout from '../images/logout.png'
+import tog from '../images/toggle.png'
 
 export default function Home() {
 
@@ -141,8 +142,9 @@ export default function Home() {
   return (
     <div className="home">
         <div className="home-toggle">
-             <div>
-                <button onClick={toggle}>toggle</button>
+             <div className="toggleSecond">
+                <button onClick={toggle}><img src={tog}/></button>
+                <NavLink style={{ textDecoration: 'none' }} to='/home'><h2>Reflecto</h2></NavLink>
               </div>
 
               <div className="account-info" 
@@ -191,7 +193,7 @@ export default function Home() {
             </div>
             <div className="counts">
               {Object.entries(moodCounts).map(([mood, count]) => (
-                <div key={mood}>
+                <div key={mood} className="countBoxContainer">
                    <div className="countBox">
                        <h1>{count}</h1>
                        <p>{mood}</p>
