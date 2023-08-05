@@ -40,13 +40,7 @@ body{
   justify-content: center;
   align-items: center;
 }
-/* div.weatherMain{
-  background-color: rgb(99, 120, 99);
-  color: white;
-  width: 100%;
-  border-radius: 20px;
-  padding: 1rem;
-} */
+
 .toggleSecond{
   display: flex;
   justify-content: center;
@@ -70,7 +64,118 @@ body{
 .doughnut{
   margin-bottom: 50px;
 }
+
+.counts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 50px;
 }
+
+.counts > div {
+  width: calc(33.33% - 10px); 
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: #fff; 
+  font-size: 20px; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.counts > div:nth-child(1) {
+  background: rgba(246, 200, 82, 0.65);
+}
+
+.counts > div:nth-child(2) {
+  background: #E8FDF2;
+  color: #6A7770;
+}
+
+.counts > div:nth-child(3) {
+  background-color: #8ca096;
+}
+
+.counts > div:nth-child(4) {
+  background: #FFF;
+  color: #6A7770;
+}
+
+.counts > div:nth-child(5) {
+  background: rgba(123, 150, 212, 0.67);
+}
+
+.counts > div:last-child {
+  align-self: flex-end;
+  margin-top: auto;
+}
+/* .weatherMain img{
+  width: 120px;
+  position: relative;
+  top: 70px;
+}
+.weatherMain p{
+  position: relative;
+  top: 115px;
+  right: 10px;
+  font-size: 18px;
+  color:white;
+  font-family: JetBrains Mono;
+}
+.weatherMain h1{
+  font-size: 50px;
+  position: relative;
+  bottom: 40px;
+  left: 50px;
+  color: white;
+  font-family: Jua;
+}
+.weatherMain h2{
+  position: relative;
+  bottom: 90px;
+  right: 40px;
+  color:white;
+  font-family: JetBrains Mono;
+}
+div.weatherMain{
+  width: 100%;
+} */
+/* .weatherBox {
+  height: 300px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 50px;
+  border-radius: 10px;
+  background-size: cover; 
+  background-position: center center;  
+   background-color: rgba(140, 160, 150, 0.6);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+} */
+.weatherBox{
+  background-color: rgba(140, 160, 150, 0.6);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+}
+
+
+
+
+
+
 @media screen and (min-width: 768px) {
   .App{
     margin: 0;
@@ -101,13 +206,6 @@ body{
     justify-content: center;
     align-items: center;
   }
-  div.weatherMain{
-    background-color: rgb(99, 120, 99);
-    color: white;
-    width: 100%;
-    border-radius: 20px;
-    padding: 1rem;
-  }
   .toggleSecond{
     display: flex;
     justify-content: center;
@@ -129,14 +227,7 @@ body{
     align-items: center;
     flex-direction: row;
   }
-  .countBox{
-    background-color: aqua;
-    width: 40%;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   .line{
     margin-bottom: 50px;
   }
@@ -148,6 +239,58 @@ body{
   .doughnut{
     margin-bottom: 50px;
   }
+
+.doughnut{
+  margin-bottom: 50px;
+}
+
+.counts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.counts > div {
+  width: calc(27.33% - 10px); 
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff; 
+  font-size: 20px; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.counts > div:nth-child(1) {
+  background: rgba(246, 200, 82, 0.65);
+}
+
+.counts > div:nth-child(2) {
+  background: #E8FDF2;
+  color: #6A7770;
+}
+
+.counts > div:nth-child(3) {
+  background-color: #8ca096;
+}
+
+.counts > div:nth-child(4) {
+  background: #FFF;
+  color: #6A7770;
+}
+
+.counts > div:nth-child(5) {
+  background: rgba(123, 150, 212, 0.67);
+}
+
+.counts > div:last-child {
+  align-self: flex-end;
+  margin-top: auto;
+}
 }
 @media screen and (min-width: 1024px) {
   #root {
