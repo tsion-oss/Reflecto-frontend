@@ -193,7 +193,7 @@ div.options a{
   font-size: 2rem;
 }
 .mood{
-  margin-top: 5rem;
+  margin-top: 4rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -227,7 +227,7 @@ div.options a{
 }
 .mainMoodList{
   width: 100%;
-  margin-top: 100px;
+  margin-top: 3rem;
   background-color: #7b96d446;
   height: auto;
   display: flex;
@@ -248,8 +248,117 @@ div.options a{
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
 }  
 .p-5{
-  background-color: #606A65;
   color: white;
+  background: #7B96D4;
+  border: black 2px solid;
+}
+div#dropdown.dropdown{
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+}
+
+
+
+
+
+
+.mainJournal{
+  max-width: 100%;
+  height: 100%;
+}
+.mainJournal h1{
+  color: rgb(66, 79, 66);
+  font-size: 1.5rem;
+}
+.howareyou{
+   font-family: IM FELL Great Primer SC;
+   font-size: 2rem;
+   text-align: left;
+   text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+.journal{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 4rem;
+  margin-top: 20px;
+  
+}
+.journalEntry{
+  
+}
+.journalList{
+  width: 480px;
+  padding: 20px;
+  background: rgba(120, 134, 127, 0.981);
+  height: auto;
+}
+.eachJournal{
+  width: 400px;
+  height: 100%;
+  padding: 50px;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+  min-width: 400px;
+  border: black 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  line-height: 1.5;
+}
+
+
+.eachJournal p{
+  max-width: 100%;
+  overflow-wrap: break-word;
+  margin: 10px;
+  padding-bottom: 50px;
+}
+.journalStack{
+  height: 650px;
+}
+.journalListMain{
+  height: 600px;
+  width: 100%;
+}
+.p-5{
+  background: #7B96D4;
+  color: white;
+  border: black 2px solid;
+  width: 370px;
+}
+.notebook-input textarea{
+  box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.3);
+}
+.notebook-input button{
+  background: white;
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  margin-top: 10px;
+  border: 1px solid lightgray;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+}
+.journalEntry select{
+  height: 30px;
+}
+.randomQuotes{
+  background: rgb(120, 139, 120, 0.6);
+  height: 250px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  margin-top: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.randomQuotes h3{
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.5;
 }
 
 

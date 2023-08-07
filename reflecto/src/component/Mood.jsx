@@ -195,6 +195,7 @@ export default function Mood() {
 
   const toggle = () => {
      setShowOptions(!showOptions)
+     setShowDropdown(false)
   }
 
   // for the setting drop down
@@ -208,6 +209,7 @@ export default function Mood() {
  
  const toggleDropdown = () => {
    setShowDropdown(!showDropdown)
+   setShowOptions(false)
  }
   
 
