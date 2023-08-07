@@ -15,9 +15,7 @@ body{
   margin: 0;
   padding: 0;
 }
-.sideBar{
-  display: none;
-}
+.sideBar,
 .navNHeader{
   display: none;
 }
@@ -30,12 +28,12 @@ body{
   justify-content: space-between;
   align-items: center;
   background: white;
-  padding: 0;
-  margin: 0;
-  width: 100vw;
+  padding: 2%;
+  width: 100%;
 }
+
 .homeSecond{
-  margin: 50px 5px;
+  margin: 2% 1%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +42,7 @@ body{
 .toggleSecond{
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 2%;
   cursor: pointer;
 }
 .toggleSecond h2{
@@ -57,12 +55,11 @@ body{
   
 }
 
-.line{
-  margin-bottom: 50px;
-}
-
+.line,
 .doughnut{
-  margin-bottom: 50px;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  max-width: 100%;
 }
 
 .counts {
@@ -70,19 +67,19 @@ body{
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 2%;
 }
 
 .counts > div {
-  width: calc(33.33% - 10px); 
-  margin-bottom: 10px;
+  width: 30%; 
+  margin-bottom: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: auto;
   color: #fff; 
-  font-size: 20px; 
-  border-radius: 10px;
+  font-size: 0.8rem; 
+  border-radius: 1rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -112,71 +109,147 @@ body{
   align-self: flex-end;
   margin-top: auto;
 }
-/* .weatherMain img{
-  width: 120px;
-  position: relative;
-  top: 70px;
-}
-.weatherMain p{
-  position: relative;
-  top: 115px;
-  right: 10px;
-  font-size: 18px;
-  color:white;
-  font-family: JetBrains Mono;
-}
-.weatherMain h1{
-  font-size: 50px;
-  position: relative;
-  bottom: 40px;
-  left: 50px;
-  color: white;
-  font-family: Jua;
-}
-.weatherMain h2{
-  position: relative;
-  bottom: 90px;
-  right: 40px;
-  color:white;
-  font-family: JetBrains Mono;
-}
-div.weatherMain{
-  width: 100%;
-} */
 .weatherMain img{
-  width: 80px;
+  max-width: 9rem;
   position: relative;
-  top: 50px;
-  left: 30px;
+  top: 4rem;
+  left: 2rem;
 }
 .weatherMain p{
   font-family: JetBrains Mono;
-  font-size: 18px;
+  font-size: 1rem;
   position: relative;
-  top: 50px;
-  right: 30px;
+  top: 3rem;
+  right: 3rem;
 }
 .weatherMain h1{
   font-family: Jua;
-  font-size: 45px;
+  font-size: 2.5rem;
   position: relative;
-  left: 60px;
-  bottom: 23px;
+  left: 4rem;
+  
 }
 .weatherMain h2{
   position: relative;
-  bottom: 40px;
+  bottom: 1.5rem;
 }
 .weatherBox{
   background-color: rgba(140, 160, 150, 0.6);
-  border-radius: 10px;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 4px 4px rgb(255, 255, 255, 0.6);
-  height: 300px;
+  height: 18rem;
+  width: 100%;
+  margin-bottom: 10%;
+}
+.dropdown{
+  background-color: rgba(255, 255, 255, 0.397);
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+}
+.options{
+  background-color: rgba(0, 0, 0, 0.35);
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+}
+div.options ul{
+  list-style: none;
+}
+div.options a{
+  text-decoration: none;
+  color: white;
+ 
+}
+.charts{
+  max-width: 20rem;
+}
+
+
+
+
+
+
+.mainMood{
+  width: 100%;
+  height: 100%;
+}
+
+.mood-button{
+  width: 3rem;
+  height: 3rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #6A7770;
+  border: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
+}
+.biggerEmojiButton{
+  font-size: 2rem;
+}
+.mood{
+  margin-top: 5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.moodButtons{
+  display: flex;
+  justify-content: center;
+}
+.mood-input{
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+.mood-inputNbutton{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.mood-inputNbutton button{
+  background: white;
+  margin-top: 0.7rem;
+  max-width: 100%;
+  height: 2rem;
+  border: 1px solid lightgray;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.mainMoodList{
+  width: 100%;
+  margin-top: 100px;
+  background-color: #7b96d446;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+}
+.mood-list{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.eachMood{
+  height: 100%;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+}  
+.p-5{
+  background-color: #606A65;
+  color: white;
 }
 
 
@@ -187,41 +260,38 @@ div.weatherMain{
 
 
 
-@media screen and (min-width: 425px) {
+ @media screen and (min-width: 425px) {
   .App{
     margin: 0;
     padding: 0;
   }
-  .sideBar{
-    display: none;
-  }
+  .sideBar,
   .navNHeader{
     display: none;
   }
   .home{
     padding: 0;
     margin: 0;
-    width: 100%;
   }
   .home-toggle{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: white;
-    padding: 0;
-    margin: 0;
+    padding: 2%;
     width: 100%;
   }
   .homeSecond{
-    margin: 50px 5px;
+    margin: 2% 1%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  
   .toggleSecond{
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 2%;
     cursor: pointer;
   }
   .toggleSecond h2{
@@ -233,82 +303,110 @@ div.weatherMain{
     border: none;
     
   }
-  .countBoxContainer{
+  
+  .line,
+  .doughnut{
+    margin-bottom: 10%;
+    margin-top: 10%;
+    max-width: 100%;
+  }
+  
+  .counts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2%;
+  }
+  
+  .counts > div {
+    width: 30%; 
+    margin-bottom: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    height: auto;
+    color: #fff; 
+    font-size: 0.8rem; 
+    border-radius: 1rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   }
-
-  .line{
-    margin-bottom: 50px;
+  
+  .counts > div:nth-child(1) {
+    background: rgba(246, 200, 82, 0.65);
+  }
+  
+  .counts > div:nth-child(2) {
+    background: #E8FDF2;
+    color: #6A7770;
+  }
+  
+  .counts > div:nth-child(3) {
+    background-color: #8ca096;
+  }
+  
+  .counts > div:nth-child(4) {
+    background: #FFF;
+    color: #6A7770;
+  }
+  
+  .counts > div:nth-child(5) {
+    background: rgba(123, 150, 212, 0.67);
+  }
+  
+  .counts > div:last-child {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+  .weatherMain img{
+    max-width: 9rem;
+    position: relative;
+    top: 4rem;
+    left: 2rem;
+  }
+  .weatherMain p{
+    font-family: JetBrains Mono;
+    font-size: 1rem;
+    position: relative;
+    top: 3rem;
+    right: 3rem;
+  }
+  .weatherMain h1{
+    font-family: Jua;
+    font-size: 2.5rem;
+    position: relative;
+    left: 4rem;
+    
+  }
+  .weatherMain h2{
+    position: relative;
+    bottom: 1.5rem;
+  }
+  .weatherBox{
+    background-color: rgba(140, 160, 150, 0.6);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 4px 4px rgb(255, 255, 255, 0.6);
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10%;
   }
   .charts{
-    display: flex;
+    max-width: 20rem;
     justify-content: center;
-    align-items: center;
-  }
-  .doughnut{
-    margin-bottom: 50px;
   }
 
-.doughnut{
-  margin-bottom: 50px;
-}
-
-.counts {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-top: 50px;
-}
-
-.counts > div {
-  width: calc(27.33% - 10px); 
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  color: #fff; 
-  font-size: 20px; 
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-}
-
-.counts > div:nth-child(1) {
-  background: rgba(246, 200, 82, 0.65);
-}
-
-.counts > div:nth-child(2) {
-  background: #E8FDF2;
-  color: #6A7770;
-}
-
-.counts > div:nth-child(3) {
-  background-color: #8ca096;
-}
-
-.counts > div:nth-child(4) {
-  background: #FFF;
-  color: #6A7770;
-}
-
-.counts > div:nth-child(5) {
-  background: rgba(123, 150, 212, 0.67);
-}
-
-.counts > div:last-child {
-  align-self: flex-end;
-  margin-top: auto;
-}
-}
+  
+}  
 
 
 
 
-
+/* 
 @media screen and (min-width: 1024px) {
 div.home-toggle{
   display: none;
@@ -443,7 +541,7 @@ textarea:focus{
 }
 
 
-/* home page */
+
 
 
 
@@ -549,7 +647,7 @@ textarea:focus{
 }
 
 
-/* header page */
+
 
 
 
@@ -599,7 +697,6 @@ header{
 
 
 
-/* charts component */
 
 
 .charts{
@@ -619,7 +716,9 @@ header{
   width: 450px;
   margin-left: 50px;
 } 
-/* Nav component */
+
+
+
 
   .sideBar{
   position: fixed;
@@ -677,7 +776,9 @@ header{
 }  
 
 
-/* journal page */
+
+
+
 .mainJournal{
   width: 100%;
   height: 100%;
@@ -779,7 +880,7 @@ header{
 
 
 
-/* moods page */
+
 
 
   .mainMood{
@@ -847,7 +948,7 @@ header{
 }  
   
 
-/* usersettting component  */
+
 
 
 
@@ -973,4 +1074,4 @@ header{
 .charts{
   margin-bottom: 200px;
 } 
-}
+}   */

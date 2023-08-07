@@ -257,7 +257,7 @@ export default function Mood() {
         <Header/>
       </div>
         <div className="mood">
-            <div>
+            <div className="moodButtons">
               {moodOptions.map((emoji) => (
               <button
               key={emoji}

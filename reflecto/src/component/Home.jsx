@@ -118,8 +118,10 @@ export default function Home() {
 
   const [showOptions, setShowOptions] = useState(false)
 
+
   const toggle = () => {
      setShowOptions(!showOptions)
+     setShowDropdown(false)
   }
 
   // for the setting drop down
@@ -137,6 +139,7 @@ export default function Home() {
  
  const toggleDropdown = () => {
    setShowDropdown(!showDropdown)
+   setShowOptions(false)
  }
 
   return (
@@ -149,7 +152,7 @@ export default function Home() {
 
               <div className="account-info" 
                    onClick={toggleDropdown}>
-                    <img style={{ width: '50px' }} src={logout} />
+                    <img style={{ maxWidth: '40px' }} src={logout} />
                </div>
                   
              
