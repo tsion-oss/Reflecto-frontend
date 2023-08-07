@@ -324,15 +324,17 @@ const [editingIndex, setEditingIndex] = useState(-1);
        
          <div className="journalEntry">
               <form onSubmit={handleSubmit}>
-                        <label>Date:</label>
-                        <DatePicker value={selectedDate} onChange={handleDateChange}   />
-                        <select value={selectedFont} onChange={handleFontChange}>
-                          {fontOptions.map((option) => (
-                            <option key={option.label} value={option.value}>
-                              {option.label}
-                            </option>
-                          ))}
-                        </select>
+                       <div className='date-select'>
+                            <label>Date:</label>
+                            <DatePicker value={selectedDate} onChange={handleDateChange}   />
+                            <select value={selectedFont} onChange={handleFontChange}>
+                              {fontOptions.map((option) => (
+                                <option key={option.label} value={option.value}>
+                                  {option.label}
+                                </option>
+                              ))}
+                            </select>
+                        </div>
                         <div className="notebook-input">
                           <textarea
                             type="text"
@@ -341,15 +343,15 @@ const [editingIndex, setEditingIndex] = useState(-1);
                             onChange={handleChange}
                             rows={10}
                             placeholder="Write your journal entry here..."
-                            style={{
-                              fontFamily: selectedFont,
-                              fontSize: '12px',
-                              lineHeight: '1.5',
-                              padding: '15px',
-                              border: '1px solid #ccc',
-                              background: 'white',
-                              width: '340px',
-                            }}
+                            // style={{
+                            //   fontFamily: selectedFont,
+                            //   fontSize: '12px',
+                            //   lineHeight: '1.5',
+                            //   padding: '15px',
+                            //   border: '1px solid #ccc',
+                            //   background: 'white',
+                            //   width: '340px',
+                            // }}
                           />
                           <button type="submit">Submit</button>
                         </div>
@@ -381,18 +383,19 @@ const [editingIndex, setEditingIndex] = useState(-1);
                         value={editedContent}
                         onChange={(e) => setEditedContent(e.target.value)}
                         rows={10}
-                        style={{
-                          fontFamily: selectedFont,
-                          fontSize: '12px',
-                          lineHeight: '1.5',
-                          padding: '15px',
-                          border: '1px solid #ccc',
-                          background: 'white',
-                          width: '340px',
-                          marginTop: '-350px',
-                          height: '400px',
-                          border: 'none'
-                        }}
+                        className='textarea-edit'
+                        // style={{
+                        //   fontFamily: selectedFont,
+                        //   fontSize: '12px',
+                        //   lineHeight: '1.5',
+                        //   padding: '15px',
+                        //   border: '1px solid #ccc',
+                        //   background: 'white',
+                        //   width: '340px',
+                        //   marginTop: '-350px',
+                        //   height: '400px',
+                        //   border: 'none'
+                        // }}
                       />
                       <div>
                         <button type="submit">Save</button>
