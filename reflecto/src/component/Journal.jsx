@@ -280,18 +280,18 @@ const [editingIndex, setEditingIndex] = useState(-1);
   return (
     <div className="mainJournal">
      
-     <div className="home-toggle">
-     <div className="toggleSecond">
-                <button onClick={toggle}><img src={tog}/></button>
-                <NavLink style={{ textDecoration: 'none' }} to='/home'><h2>Reflecto</h2></NavLink>
-              </div>
-              <div className="account-info" 
-                   onClick={toggleDropdown}>
-                    <img style={{ width: '50px' }} src={logout} />
-               </div>
+          <div className="home-toggle">
+                  <div className="toggleSecond">
+                    <button onClick={toggle}><img src={tog}/></button>
+                    <NavLink style={{ textDecoration: 'none' }} to='/home'><h2>Reflecto</h2></NavLink>
+                  </div>
+                  <div className="account-info" 
+                      onClick={toggleDropdown}>
+                        <img style={{ width: '50px' }} src={logout} />
+                  </div>
                   
              
-        </div>
+          </div>
                {showDropdown &&
                <div className="dropdown" id="dropdown">
                     <p onClick={handleLogout}>Logout</p>
@@ -314,52 +314,52 @@ const [editingIndex, setEditingIndex] = useState(-1);
                     </div>
                )}
 
-     <div className="navNHeader">
-        <Nav className='homeNav'/>
-        <Header/>
-      </div>
-      <style>{styles}</style>
-      <h1 className='howareyou'>How are you?    {userr.username}</h1>
-      <div className="journal">
-        
-        <div className="journalEntry">
-          <form onSubmit={handleSubmit}>
-            <label>Date:</label>
-            <DatePicker value={selectedDate} onChange={handleDateChange}   />
-            <select value={selectedFont} onChange={handleFontChange}>
-              {fontOptions.map((option) => (
-                <option key={option.label} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-            <div className="notebook-input">
-              <textarea
-                type="text"
-                name="content"
-                value={entry.content}
-                onChange={handleChange}
-                rows={10}
-                placeholder="Write your journal entry here..."
-                style={{
-                  fontFamily: selectedFont,
-                  fontSize: '12px',
-                  lineHeight: '1.5',
-                  padding: '15px',
-                  border: '1px solid #ccc',
-                  background: 'white',
-                  width: '340px',
-                }}
-              />
-              <button type="submit">Submit</button>
-            </div>
-            
-          </form>
-
-          <div className='randomQuotes'>
-                <h3 className="quote">{randomQuote}</h3>
-
+        < div className="navNHeader">
+                <Nav className='homeNav'/>
+                <Header/>
           </div>
+          <style>{styles}</style>
+          <h1 className='howareyou'>How are you?    {userr.username}</h1>
+      <div className="journal">
+       
+         <div className="journalEntry">
+              <form onSubmit={handleSubmit}>
+                        <label>Date:</label>
+                        <DatePicker value={selectedDate} onChange={handleDateChange}   />
+                        <select value={selectedFont} onChange={handleFontChange}>
+                          {fontOptions.map((option) => (
+                            <option key={option.label} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
+                        <div className="notebook-input">
+                          <textarea
+                            type="text"
+                            name="content"
+                            value={entry.content}
+                            onChange={handleChange}
+                            rows={10}
+                            placeholder="Write your journal entry here..."
+                            style={{
+                              fontFamily: selectedFont,
+                              fontSize: '12px',
+                              lineHeight: '1.5',
+                              padding: '15px',
+                              border: '1px solid #ccc',
+                              background: 'white',
+                              width: '340px',
+                            }}
+                          />
+                          <button type="submit">Submit</button>
+                        </div>
+            
+               </form>
+
+              <div className='randomQuotes'>
+                    <h3 className="quote">{randomQuote}</h3>
+
+              </div>
         </div>
       <div className="journalListMain">
         <div className="journalList">
