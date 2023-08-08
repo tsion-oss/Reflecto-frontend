@@ -152,7 +152,7 @@ export default function Home() {
 
               <div className="account-info" 
                    onClick={toggleDropdown}>
-                    <img style={{ maxWidth: '40px' }} src={logout} />
+                    <img  src={logout} />
                </div>
                   
              
@@ -190,7 +190,7 @@ export default function Home() {
           <div>
             <MoodGraph />
           </div>
-          <div>
+          <div className="weatherNCount">
             <div className="weatherBox">
               <div dangerouslySetInnerHTML={{ __html: locationInfo }}></div>
             </div>

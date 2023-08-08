@@ -133,7 +133,7 @@ const UserSetting = ({ setIsLoggedIn }) => {
                   </div>
                   <div className="account-info" 
                       onClick={toggleDropdown}>
-                        <img style={{ width: '50px' }} src={logout} />
+                        <img  src={logout} />
                   </div>
                   
              
@@ -166,78 +166,79 @@ const UserSetting = ({ setIsLoggedIn }) => {
 
 
 
+       <div className='userSettingBody'>
+              <h1 className='settingName'
+                  style={{ fontFamily:'jaldi',
+                          textShadow:'2px 4px 2px rgba(255, 255, 255)' }}>Account Settings</h1>
+              <div className='userSecondMain'>
+                  <div className='userSettingBox'>
+                
+                      <div className='navButtonsContainer'>
+                          <div className='navButtons'>
+                                <div style={{ display: 'flex' }}>
+                                    <img src={accIcon} />
+                                  <p onClick={() => setShowUserSettings(true)}>Account</p>
+                                </div>
+                                <div style={{ display: 'flex' }}>
+                                    <img src={themeIcon}/>
+                                  <p onClick={() => setShowUserSettings(false)}>Theme</p>
+                                </div>
+                          </div>
+                    </div>
+                <div className='settingContent'>
+                {showUserSettings && (
+                  <form onSubmit={handleUpdateUser}>
+                    <div>
+                      <label>Username</label>
+                      <input
+                        type="text"
+                        name="username"
+                        value={userData.username || ''}
+                        onChange={handleChange}
+                        placeholder="Username"
+                      />
+                    </div>
+                    <div>
+                      <label>Password</label>
+                      <input
+                        type="password"
+                        name="password"
+                        value={userData.password || ''}
+                        onChange={handleChange}
+                        placeholder="Password"
+                      />
+                    </div>
+                    <div>
+                      <button type="submit">Save Changes</button>
+                      <button onClick={deleteUser}>Delete Account</button>
+                    </div>
+                  </form>
+                )}
 
-      <h1 className='settingName'
-          style={{ fontFamily:'jaldi',
-                   textShadow:'2px 4px 2px rgba(255, 255, 255)' }}>{userData.username} Account Settings</h1>
-      <div className='userSecondMain'>
-      <div className='userSettingBox'>
-        
-      <div className='navButtonsContainer'>
-      <div className='navButtons'>
-        <div style={{ display: 'flex' }}>
-            <img src={accIcon} />
-           <p onClick={() => setShowUserSettings(true)}>Account</p>
-        </div>
-        <div style={{ display: 'flex' }}>
-            <img src={themeIcon}/>
-           <p onClick={() => setShowUserSettings(false)}>Theme</p>
-        </div>
-      </div>
-    </div>
-        <div className='settingContent'>
-        {showUserSettings && (
-          <form onSubmit={handleUpdateUser}>
-            <div>
-              <label>Username</label>
-              <input
-                type="text"
-                name="username"
-                value={userData.username || ''}
-                onChange={handleChange}
-                placeholder="Username"
-              />
-            </div>
-            <div>
-              <label>Password</label>
-              <input
-                type="password"
-                name="password"
-                value={userData.password || ''}
-                onChange={handleChange}
-                placeholder="Password"
-              />
-            </div>
-            <div>
-              <button type="submit">Save Changes</button>
-              <button onClick={deleteUser}>Delete Account</button>
-            </div>
-          </form>
-        )}
-
-        {!showUserSettings && (
-          <div>
-            <label>Choose Theme:</label>
-            <div className="theme-buttons">
-              <button onClick={() => handleThemeChange('none')} >no theme</button>
-              <button onClick={() => handleThemeChange(themeOne)}>
-                <img src={themeOne}  alt="Theme 1" />
-              </button>
-              <button onClick={() => handleThemeChange(themeTwo)}>
-                <img src={themeTwo} alt="Theme 2" />
-              </button>
-              <button onClick={() => handleThemeChange(themeThree)}>
-                <img src={themeThree} alt="Theme 3" />
-              </button>
-              <button onClick={() => handleThemeChange(themeFour)}>
-                <img src={themeFour} alt="Theme 3" />
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-      </div>
-      </div>
+                {!showUserSettings && (
+                  <div className='theme-images'>
+                    {/* <label>Choose Theme:</label> */}
+                    <div className="theme-buttons">
+                      <button onClick={() => handleThemeChange('none')} ><p>No theme</p></button>
+                      <button onClick={() => handleThemeChange(themeOne)}>
+                        <img src={themeOne}  alt="Theme 1" />
+                      </button>
+                      <button onClick={() => handleThemeChange(themeTwo)}>
+                        <img src={themeTwo} alt="Theme 2" />
+                      </button>
+                      <button onClick={() => handleThemeChange(themeThree)}>
+                        <img src={themeThree} alt="Theme 3" />
+                      </button>
+                      <button onClick={() => handleThemeChange(themeFour)}>
+                        <img src={themeFour} alt="Theme 3" />
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+              </div>
+              </div>
+       </div>
     </div>
   );
 };

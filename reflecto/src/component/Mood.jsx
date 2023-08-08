@@ -224,7 +224,7 @@ export default function Mood() {
 
               <div className="account-info" 
                    onClick={toggleDropdown}>
-                    <img style={{ width: '50px' }} src={logout} />
+                    <img  src={logout} />
                </div>
                   
              

@@ -164,13 +164,13 @@ export default function MoodGraph() {
   
 
   return (
-    <div className="charts">
-      <div className="line">
-         <Line  className="lineChart" data={lineChartData} options={lineChartOptions} />
-      </div>
-      <div className="doughnut">
-           <Doughnut   data={doughnutChartData} plugins={[ChartDataLabels]} options={doughnutChartOptions} />
-      </div>
+    <div className="charts" >
+          <div className="line">
+            <Line  className="lineChart" data={lineChartData} options={lineChartOptions} />
+          </div>
+          <div className="doughnut">
+              <Doughnut   data={doughnutChartData} plugins={[ChartDataLabels]} options={doughnutChartOptions} />
+          </div>
     </div>
   );
 }

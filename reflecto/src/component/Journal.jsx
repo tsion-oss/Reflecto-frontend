@@ -289,7 +289,7 @@ const [editingIndex, setEditingIndex] = useState(-1);
                   </div>
                   <div className="account-info" 
                       onClick={toggleDropdown}>
-                        <img style={{ width: '50px' }} src={logout} />
+                        <img src={logout} />
                   </div>
                   
              
