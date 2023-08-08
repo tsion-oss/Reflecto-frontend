@@ -258,6 +258,7 @@ const [editingIndex, setEditingIndex] = useState(-1);
 
   const toggle = () => {
      setShowOptions(!showOptions)
+     setShowDropdown(false)
   }
 
   // for the setting drop down
@@ -275,6 +276,7 @@ const [editingIndex, setEditingIndex] = useState(-1);
  
  const toggleDropdown = () => {
    setShowDropdown(!showDropdown)
+   setShowOptions(false)
  }
   
   return (

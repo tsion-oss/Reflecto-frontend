@@ -8,6 +8,9 @@ import themeOne from '../images/a.png'
 import themeTwo from '../images/b.png'
 import themeThree from '../images/books.png'
 import themeFour from '../images/d.png'
+import { NavLink } from 'react-router-dom';
+import tog from '../images/toggle.png'
+import logout from '../images/logout.png'
 
 const UserSetting = ({ setIsLoggedIn }) => {
   const [userData, setUserData] = useState({});
@@ -92,9 +95,77 @@ const UserSetting = ({ setIsLoggedIn }) => {
     }
   };
 
+
+
+
+
+  // for the menu toggle
+
+  const [showOptions, setShowOptions] = useState(false)
+
+  const toggle = () => {
+     setShowOptions(!showOptions)
+     setShowDropdown(false)
+  }
+
+  // for the setting drop down
+
+  const [showDropdown, setShowDropdown] = useState(false)
+
+  
+  const toUserSetting = () => {
+     window.location.href = '/usersetting'
+  }
+ 
+ const toggleDropdown = () => {
+   setShowDropdown(!showDropdown)
+   setShowOptions(false)
+ }
+
+
+
   return (
     <div className='userSettingMain'>
-      <Header />
+      <div className="home-toggle">
+                  <div className="toggleSecond">
+                    <button onClick={toggle}><img src={tog}/></button>
+                    <NavLink style={{ textDecoration: 'none' }} to='/home'><h2>Reflecto</h2></NavLink>
+                  </div>
+                  <div className="account-info" 
+                      onClick={toggleDropdown}>
+                        <img style={{ width: '50px' }} src={logout} />
+                  </div>
+                  
+             
+          </div>
+               {showDropdown &&
+               <div className="dropdown" id="dropdown">
+                    <p onClick={handleLogout}>Logout</p>
+                    <p onClick={toUserSetting} >User Setting</p>
+                </div>}
+        
+               {showOptions && ( 
+                  <div className='options'>
+                      <ul>
+                        <li>
+                          <NavLink to='/home' activeClassName="active">My Reflection</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to='/mood' activeClassName="active">My Moods</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to='/journal' activeClassName="active">My Journals</NavLink>
+                        </li>
+                      </ul>
+                    </div>
+               )}
+
+
+
+
+
+
+
 
       <h1 className='settingName'
           style={{ fontFamily:'jaldi',
