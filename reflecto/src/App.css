@@ -19,6 +19,119 @@ body{
 .navNHeader{
   display: none;
 }
+
+
+
+.login{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+textarea:focus{
+  border-bottom-color: #007bff;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.left-login {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color: #BACFC5;
+}
+
+.left-login img {
+  max-width: 100%; 
+  max-height: 100%;
+}
+
+.right-login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right-login p {
+  font-size: 0.9rem;
+  font-family: Amita;
+}
+.right-login form{
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right-login h1{
+  color: #6A7770;
+  font-family: Leckerli One;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.right-login div {
+  margin-bottom: 1rem;
+}
+.right-login label {
+  display: block;
+  text-align: left;
+  color: #000;
+  font-family: 'IM FELL Great Primer SC';
+  font-size: 0.7rem;
+}
+
+.right-login .input-wrapper input[type="text"],
+.right-login .input-wrapper input[type="password"] {
+  min-width: 13rem;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid lightgray;
+  color: rgb(160, 160, 160);
+}
+
+.right-login button {
+  width: 7rem;
+  padding: 5px;
+  background: #6A7770;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: Jaldi;
+}
+
+.right-login p {
+  margin-top: 10px;
+  color: rgb(122, 121, 121);
+ 
+}
+
+.right-login a {
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.right-login a:hover {
+  text-decoration: underline;
+}
+
+
+
 .home{
   padding: 0;
   margin: 0;
@@ -481,6 +594,117 @@ div.userSettingBox{
     padding: 0;
     margin: 0;
   }
+
+
+  /* .login{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  } */
+  
+  
+  textarea:focus{
+    border-bottom-color: #007bff;
+  }
+  
+  .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .left-login {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #BACFC5;
+  }
+  
+  .left-login img{
+    width: 100%; 
+  }
+  
+  .right-login {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-login p {
+    font-size: 0.9rem;
+    font-family: Amita;
+  }
+  .right-login form{
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-login h1{
+    color: #6A7770;
+    font-family: Leckerli One;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .right-login div {
+    margin-bottom: 1rem;
+  }
+  .right-login label {
+    display: block;
+    text-align: left;
+    color: #000;
+    font-family: 'IM FELL Great Primer SC';
+    font-size: 0.7rem;
+  }
+  
+  .right-login .input-wrapper input[type="text"],
+  .right-login .input-wrapper input[type="password"] {
+    min-width: 13rem;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid lightgray;
+    color: rgb(160, 160, 160);
+  }
+  
+  .right-login button {
+    width: 7rem;
+    padding: 5px;
+    background: #6A7770;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: Jaldi;
+  }
+  
+  .right-login p {
+    margin-top: 10px;
+    color: rgb(122, 121, 121);
+   
+  }
+  
+  .right-login a {
+    color: rgb(112, 112, 112);
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .right-login a:hover {
+    text-decoration: underline;
+  }
+  
+
+
   .home-toggle{
     display: flex;
     justify-content: space-between;
@@ -943,6 +1167,124 @@ div.userSettingBox{
   .navNHeader{
     display: none;
   }
+
+
+  .login{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  textarea:focus{
+    border-bottom-color: #007bff;
+  }
+  
+  .login {
+    display: flex;
+    height: 100vh;
+  
+  }
+  
+  .left-login {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #BACFC5;
+  }
+  
+  .left-login img {
+    max-width: 100%; 
+    max-height: 100%;
+  }
+  
+  .right-login {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .right-login p {
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+    font-family: Amita;
+  }
+  .right-login form{
+    width: 80%;
+    padding: 1.7rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .right-login h1{
+    color: #6A7770;
+    font-family: Leckerli One;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .right-login div {
+    margin-bottom: 1rem;
+  }
+  
+  .right-login label {
+    display: block;
+    text-align: left;
+    /* margin-left: 80px; */
+    margin-bottom: 10px;
+    color: #000;
+    font-family: 'IM FELL Great Primer SC';
+  }
+  
+  .right-login .input-wrapper input[type="text"],
+  .right-login .input-wrapper input[type="password"] {
+    width: 16rem;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid lightgray;
+    color: rgb(160, 160, 160);
+  }
+  
+  .right-login button {
+    width: 150px;
+    padding: 5px;
+    background: #6A7770;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: Jaldi;
+  }
+  
+  .right-login p {
+    margin-top: 10px;
+    color: rgb(122, 121, 121);
+   
+  }
+  
+  .right-login a {
+    color: rgb(112, 112, 112);
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .right-login a:hover {
+    text-decoration: underline;
+  }
+  
+  
+
+
+
+
   .home{
     padding: 0;
     margin: 0;
@@ -1654,7 +1996,6 @@ textarea:focus{
 
 
 
-
 header{
   height: 75px;
   width: 100%;
@@ -1974,7 +2315,7 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  flex-wrap: wrap;
 }
 
 .userSettingBox{
@@ -1985,9 +2326,11 @@ header{
    align-items: center;
    flex-direction: column;
    width: 100%;
-   border-radius: 20px;
+   overflow-x: scroll;
+   white-space: nowrap;
    border: 1px solid rgb(237, 237, 237);
-   gap: 50px
+   gap: 50px;
+  
 }
 .userSettingBox input{
   height: 30px;
@@ -2042,18 +2385,18 @@ header{
   justify-content: space-between;
 }
 .navButtonsContainer {
-  position: relative;
-  top: 17rem;
+  position: absolute;
+  top: 16.1rem;
   left: 0;
   display: flex;
   justify-content: right;
   transform: translateY(-50%);
   background-color: white;
   padding: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  height: 20rem;
   margin-left: 201px;
   width: 150px;
-  height: 21.5rem;
+
 }
 .navButtons {
   display: flex;
@@ -2085,6 +2428,9 @@ header{
 }
 .theme-buttons{
   display: flex;
+  min-width: 300px;
+  margin-right: 5rem;
+  margin-left: 20rem;
 }
 .homeSecond{
   margin-top: 30px;
