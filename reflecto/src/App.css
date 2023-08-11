@@ -1082,7 +1082,7 @@ div.userSettingBox{
     margin-bottom: 1rem;
     margin-top: 1rem;
   }
-  eachJournal form {
+  .eachJournal form {
     display: flex;
     justify-content: center;
     flex-direction: column;
