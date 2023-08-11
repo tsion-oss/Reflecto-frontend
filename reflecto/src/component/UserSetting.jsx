@@ -139,7 +139,6 @@ const UserSetting = ({ setIsLoggedIn }) => {
              
           </div>
                {showDropdown &&
-               
                     <div className="dropdown" id="dropdown">
                           <p onClick={handleLogout}>Logout</p>
                           <p onClick={toUserSetting} >User Setting</p>
@@ -166,11 +165,8 @@ const UserSetting = ({ setIsLoggedIn }) => {
 
 
 
-       <div className='userSettingBody'>
 
-   
-        <Header/>
-     
+       <div className='userSettingBody'>
               <h1 className='settingName'
                   style={{ fontFamily:'jaldi',
                           textShadow:'2px 4px 2px rgba(255, 255, 255)' }}>Account Settings</h1>
