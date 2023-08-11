@@ -166,8 +166,11 @@ const UserSetting = ({ setIsLoggedIn }) => {
 
 
 
-
        <div className='userSettingBody'>
+
+   
+        <Header/>
+     
               <h1 className='settingName'
                   style={{ fontFamily:'jaldi',
                           textShadow:'2px 4px 2px rgba(255, 255, 255)' }}>Account Settings</h1>
