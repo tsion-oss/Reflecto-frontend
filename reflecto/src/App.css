@@ -1088,7 +1088,7 @@ div.userSettingBox{
     flex-direction: column;
     align-items: center;
   }
-  userSettingBody{
+  .userSettingBody{
     display: flex;
     flex-direction: column;
     justify-content: center;
