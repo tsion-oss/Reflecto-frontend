@@ -26,7 +26,12 @@ export default function MoodGraph() {
         console.error('Error fetching mood data:', error);
         setLoading(false); 
       });
+
+
+      
   }, []);
+
+
 
  
   if (loading) {
@@ -93,7 +98,7 @@ export default function MoodGraph() {
   };
 
   const lineChartOptions = {
-
+    responsive: true,
     scales: {
       x: {
         ticks: {
@@ -136,6 +141,7 @@ export default function MoodGraph() {
     },
   };
   const doughnutChartOptions = {
+    responsive: true,
     elements: {
       arc: {
         borderWidth: 5, 

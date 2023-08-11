@@ -194,16 +194,18 @@ export default function Home() {
             <div className="weatherBox">
               <div dangerouslySetInnerHTML={{ __html: locationInfo }}></div>
             </div>
-            <div className="counts">
-              {Object.entries(moodCounts).map(([mood, count]) => (
-                <div key={mood} className="countBoxContainer">
-                   <div className="countBox">
-                       <h1>{count}</h1>
-                       <p>{mood}</p>
+          
+                  <div className="counts">
+                    {Object.entries(moodCounts).map(([mood, count]) => (
+                      <div key={mood} className="countBoxContainer">
+                        <div className="countBox">
+                            <h1>{count}</h1>
+                            <p>{mood}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              ))}
-            </div>
+        
           </div>
         </div>  
       </div>

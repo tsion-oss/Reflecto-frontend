@@ -139,26 +139,29 @@ const UserSetting = ({ setIsLoggedIn }) => {
              
           </div>
                {showDropdown &&
-               <div className="dropdown" id="dropdown">
-                    <p onClick={handleLogout}>Logout</p>
-                    <p onClick={toUserSetting} >User Setting</p>
-                </div>}
-        
-               {showOptions && ( 
-                  <div className='options'>
-                      <ul>
-                        <li>
-                          <NavLink to='/home' activeClassName="active">My Reflection</NavLink>
-                        </li>
-                        <li>
-                          <NavLink to='/mood' activeClassName="active">My Moods</NavLink>
-                        </li>
-                        <li>
-                          <NavLink to='/journal' activeClassName="active">My Journals</NavLink>
-                        </li>
-                      </ul>
-                    </div>
-               )}
+              
+                    <div className="dropdown" id="dropdown">
+                          <p onClick={handleLogout}>Logout</p>
+                          <p onClick={toUserSetting} >User Setting</p>
+                      </div>}
+              
+                    {showOptions && ( 
+                        <div className='options'>
+                            <ul>
+                              <li>
+                                <NavLink to='/home' activeClassName="active">My Reflection</NavLink>
+                              </li>
+                              <li>
+                                <NavLink to='/mood' activeClassName="active">My Moods</NavLink>
+                              </li>
+                              <li>
+                                <NavLink to='/journal' activeClassName="active">My Journals</NavLink>
+                              </li>
+                            </ul>
+                          </div>
+                  
+               )
+               }
 
 
 

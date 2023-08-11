@@ -10,7 +10,7 @@ body{
 
 
 
-@media (max-width: 425px) {
+ @media (max-width: 425px) {
 .App{
   margin: 0;
   padding: 0;
@@ -59,7 +59,7 @@ body{
 .doughnut{
   margin-bottom: 10%;
   margin-top: 10%;
-  max-width: 100%;
+  width: 100%;
 }
 
 .counts {
@@ -430,10 +430,10 @@ div.userSettingBox{
   width: 10rem;
   height: 6rem;
 }
-/* .nav-buttons div{
+ .nav-buttons div{
   display: flex;
   flex-direction: row;
-} */
+} 
 .navButtons{
   display: flex;
   flex-direction: row;
@@ -468,11 +468,7 @@ div.userSettingBox{
 }
 
 
-
-
-
-
- @media screen and (min-width: 425px) {
+ @media (min-width: 426px) and (max-width: 700px) {
   .App{
     margin: 0;
     padding: 0;
@@ -496,11 +492,10 @@ div.userSettingBox{
   
   .homeSecond{
     margin: 2% 1%;
-    /* display: flex;
+     display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center; 
   }
-  
   .toggleSecond{
     display: flex;
     justify-content: center;
@@ -514,22 +509,22 @@ div.userSettingBox{
   .toggleSecond button{
     background: none;
     border: none;
-    
   }
-  
   .line,
   .doughnut{
     margin-bottom: 10%;
     margin-top: 10%;
-    flex: 1;
+    min-width: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-    .charts{
+  .charts{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  
   .counts {
     display: flex;
     justify-content: space-between;
@@ -541,6 +536,470 @@ div.userSettingBox{
   
   .counts > div {
     width: 6rem; 
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    color: #fff; 
+    font-size: 0.8rem; 
+    border-radius: 1rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .counts > div:nth-child(1) {
+    background: rgba(246, 200, 82, 0.65);
+  }
+  
+  .counts > div:nth-child(2) {
+    background: #E8FDF2;
+    color: #6A7770;
+  }
+  
+  .counts > div:nth-child(3) {
+    background-color: #8ca096;
+  }
+  
+  .counts > div:nth-child(4) {
+    background: #FFF;
+    color: #6A7770;
+  }
+  
+  .counts > div:nth-child(5) {
+    background: rgba(123, 150, 212, 0.67);
+  }
+  
+  .counts > div:last-child {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+  .weatherMain img{
+    max-width: 9rem;
+    position: relative;
+    top: 4rem;
+    left: 2rem;
+  }
+  .weatherMain p{
+    font-family: JetBrains Mono;
+    font-size: 1rem;
+    position: relative;
+    top: 3rem;
+    right: 3rem;
+  }
+  .weatherMain h1{
+    font-family: Jua;
+    font-size: 2.5rem;
+    position: relative;
+    left: 4rem;
+    
+  }
+  .weatherMain h2{
+    position: relative;
+    bottom: 1.5rem;
+  }
+  .weatherBox{
+    background-color: rgba(140, 160, 150, 0.6);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 4px 4px rgb(255, 255, 255, 0.6);
+    height: 18rem;
+    min-width: 300px;
+    margin-bottom: 10%;
+  }
+  .dropdown{
+    background-color: rgba(255, 255, 255, 0.397);
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+  }
+  .options{
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+  }
+  div.options ul{
+    list-style: none;
+  }
+  div.options a{
+    text-decoration: none;
+    color: white;
+   
+  }
+
+  
+  .weatherNCount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainMood{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .mood-button{
+    width: 3rem;
+    height: 3rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: #6A7770;
+    border: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
+  }
+  .biggerEmojiButton{
+    font-size: 2rem;
+  }
+  .mood{
+    margin-top: 4rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .moodButtons{
+    display: flex;
+    justify-content: center;
+  }
+  .mood-input{
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+    border: none;
+  }
+  .mood-inputNbutton{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mood-inputNbutton button{
+    background: white;
+    margin-top: 0.7rem;
+    max-width: 100%;
+    height: 2rem;
+    border: 1px solid lightgray;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  .mainMoodList{
+    width: 100%;
+    margin-top: 3rem;
+    background-color: #7b96d446;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+  }
+  .mood-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .eachMood{
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+  }  
+  .p-5{
+    color: white;
+    background: #7B96D4;
+    border: black 2px solid;
+  }
+  div#dropdown.dropdown{
+    background-color: rgba(0, 0, 0, 0.35);
+    color: white;
+  }
+  
+  
+  
+  
+  
+  
+  .mainJournal{
+    max-width: 100%;
+    height: 100%;
+  
+  }
+  .date-select{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mainJournal h1{
+    color: rgb(66, 79, 66);
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .howareyou{
+     font-family: IM FELL Great Primer SC;
+     font-size: 2rem;
+     text-align: left;
+     text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  }
+  .journal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 4rem;
+    margin-top: 1.7rem; 
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .journalList{
+    width: 27.5rem;
+    padding: 0.5rem;
+    background: rgba(120, 134, 127, 0.981);
+    height: 100%;
+  }
+  .eachJournal{
+    width: 100%;
+    max-height: 100%;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    border: black 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    line-height: 1.5;
+    font-size: 0.8rem;
+  }
+  .eachJournal p{
+    max-width: 100%;
+    overflow-wrap: break-word;
+    padding-bottom: 3.5rem;
+    
+  }
+  .eachJournal p.index{
+    text-align: center;
+  }
+  .journalStack{
+  max-height: 100%;
+  }
+  .journalListMain{
+    max-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .p-5{
+    background: #7B96D4;
+    color: white;
+    border: black 2px solid;
+  }
+  .notebook-input{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .notebook-input textarea{
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.3);
+    width: 100%;
+  }
+  .notebook-input button{
+    background: white;
+    max-width: 100%;
+    height: 2.2rem;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    border: 1px solid lightgray;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+  }
+  .journalEntry select{
+    height: 2rem;
+  }
+  .randomQuotes{
+    background: rgb(120, 139, 120, 0.6);
+    max-height: 100%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+    padding: 0.9rem;
+    margin-top: 2.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 26rem;
+  }
+  .randomQuotes h3{
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.5;
+  }
+  
+  .journalStack{
+    width: 100%;
+  
+  }
+   .textarea-edit{
+    min-width: 18rem;
+    font-size: 0.7rem;
+  }
+  .journalStack button{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  .eachJournal form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .userSettingBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    padding: 0.8rem;
+    width: 100%;
+  }
+  div.userSettingBox{
+    max-width: 100%;
+  }
+  .userSettingBody label{
+    display: none;
+  }
+  .theme-buttons button{
+    width: 10rem;
+    height: 6rem;
+    border: 1px solid lightgray;
+    box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .theme-buttons img{
+    width: 10rem;
+    height: 6rem;
+  }
+   .nav-buttons div{
+    display: flex;
+    flex-direction: row;
+  } 
+  .navButtons{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+    gap: 2rem;
+  
+  }
+  .theme-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+  }
+  
+  .settingContent input{
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1rem;
+    border: lightgray solid 1px;
+    border-radius: 0.3rem;
+  }
+  .settingContent form button{
+    background: rgb(238, 238, 238);
+    border: 1px lightgray solid;
+    box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.1);
+    margin-right: 1rem;
+    height: 2rem;
+  }
+  .account-info img{
+    width: 2.5rem;
+  }
+  
+}   
+
+@media (min-width: 701px) and (max-width: 1023px){
+  .App{
+    margin: 0;
+    padding: 0;
+  }
+  .sideBar,
+  .navNHeader{
+    display: none;
+  }
+  .home{
+    padding: 0;
+    margin: 0;
+  }
+  .home-toggle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 2%;
+    width: 100%;
+  }
+  
+  .homeSecond{
+    margin: 2% 1%;
+     display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  .toggleSecond{
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    cursor: pointer;
+  }
+  .toggleSecond h2{
+    font-family: Leckerli One;
+    color: #606A65;
+  }
+  .toggleSecond button{
+    background: none;
+    border: none;
+  }
+  canvas{
+    margin-bottom: 10%;
+    margin-top: 10%;
+    width: 200%;
+  }
+  .charts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 700px;
+  }
+  .counts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    width: 22rem;
+  }
+  
+  .counts > div {
+    width: calc(30% - 5px);
     margin-bottom: 10%;
     display: flex;
     justify-content: center;
@@ -639,9 +1098,10 @@ div.userSettingBox{
   
   .weatherNCount{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
   }
 
   .mainMood{
@@ -766,7 +1226,7 @@ div.userSettingBox{
   }
   
   .journalList{
-    width: 100%;
+    width: 31.5rem;
     padding: 0.5rem;
     background: rgba(120, 134, 127, 0.981);
     height: 100%;
@@ -805,6 +1265,9 @@ div.userSettingBox{
   .journalListMain{
     max-height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .p-5{
     background: #7B96D4;
@@ -843,6 +1306,7 @@ div.userSettingBox{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 25rem;
   }
   .randomQuotes h3{
     color: white;
@@ -899,10 +1363,10 @@ div.userSettingBox{
     width: 10rem;
     height: 6rem;
   }
-  /* .nav-buttons div{
+   .nav-buttons div{
     display: flex;
     flex-direction: row;
-  } */
+  } 
   .navButtons{
     display: flex;
     flex-direction: row;
@@ -936,35 +1400,15 @@ div.userSettingBox{
     width: 2.5rem;
   }
   
-}    
-
-@media screen and (min-width: 700px) {
-  .line,
-  .doughnut{
-    margin-bottom: 10%;
-    margin-top: 10%;
-    flex: 1;
-  }
-    .charts{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-  div.weatherNCount{
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 
 
 
-/*
 @media screen and (min-width: 1024px) {
+.options{
+ background: none;
+}
 div.home-toggle{
   display: none;
 }
@@ -1028,26 +1472,26 @@ textarea:focus{
 
 }
 .right-login p {
-  margin-bottom: 60px;
-  font-size: 25px;
+  margin-bottom: 4rem;
+  font-size: 1.5rem;
   font-family: Amita;
 }
 .right-login form{
   width: 80%;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 1.7rem;
+  border-radius: 0.5rem;
 }
 .right-login h1{
   color: #6A7770;
   font-family: Leckerli One;
-  font-size: 70px;
+  font-size: 4rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 .right-login div {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .right-login label {
@@ -1110,6 +1554,7 @@ textarea:focus{
 .graphnWeather{
   display: flex;
   margin-left: 250px;
+  gap: 2rem;
 }
 .weatherBox {
   height: 300px;
@@ -1133,10 +1578,12 @@ textarea:focus{
   align-items: flex-start;
   flex-wrap: wrap;
   margin-top: 90px;
+  width: 22rem;
 }
 
+
 .counts > div {
-  width: calc(33.33% - 10px); 
+  width: calc(35% - 1rem); 
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
@@ -1258,19 +1705,20 @@ header{
 
 .charts{
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  gap: 50px;
+  gap: 6rem;
 }
 
  .line{
-  width: 600px;
-  background: white;
+  width: 30rem;
   border-radius: 20px;
   margin-top: 30px;
   padding: 10px;
 }
 .doughnut{
-  width: 450px;
+  width: 27rem;
   margin-left: 50px;
 } 
 
@@ -1345,18 +1793,18 @@ header{
 }
 .howareyou{
    font-family: IM FELL Great Primer SC;
-   font-size: 40px;
+   font-size: 2.5rem;
    text-align: left;
    margin-left: 270px;
    text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 .journal{
   width: 100%;
-  height: 100%;
-  display: flex;
+  height: 100vh;
   gap: 50px;
   margin-top: 20px;
-  
+  display: flex;
+  justify-content: center;
 }
 .journalEntry{
   margin-left: 280px;
@@ -1389,6 +1837,7 @@ header{
   overflow-wrap: break-word;
   margin: 10px;
   padding-bottom: 50px;
+  font-size: 0.8rem;
 }
 .journalStack{
   height: 650px;
@@ -1405,6 +1854,7 @@ header{
 }
 .notebook-input textarea{
   box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.3);
+  width: 23rem;
 }
 .notebook-input button{
   background: white;
@@ -1428,13 +1878,18 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 25rem;
 }
 .randomQuotes h3{
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   line-height: 1.5;
 }
-
+.textarea-edit{
+  width: 20rem;
+  height: 100%;
+  font-size: 0.8rem;
+}
 
 
 
@@ -1442,7 +1897,8 @@ header{
 
   .mainMood{
   width: 100%;
-  height: 100%;
+  height: 100vh;
+
 }
 
 .mood-button{
@@ -1460,6 +1916,11 @@ header{
   margin-top: 100px;
   margin-left: 200px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
 }
 .mood-input{
   width: 350px;
@@ -1484,8 +1945,8 @@ header{
   cursor: pointer;
 }
 .mainMoodList{
-  width: 800px;
-  margin-left: 130px;
+  min-width: 45rem;
+  margin-left: 90px;
   margin-top: 100px;
   background-color: #7b96d446;
   height: 280px;
@@ -1574,25 +2035,26 @@ header{
   font-weight: bold;
   font-size: 20px;
   cursor: pointer;
-
 }
 .navUserSettingContainer {
-  margin-top: auto; 
-  
+  margin-top: auto;  
+  display: flex;
+  justify-content: space-between;
 }
 .navButtonsContainer {
-  position: fixed;
-  top: 349px;
+  position: relative;
+  top: 17rem;
   left: 0;
+  display: flex;
+  justify-content: right;
   transform: translateY(-50%);
   background-color: white;
   padding: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   margin-left: 201px;
   width: 150px;
-  height: 330px;
+  height: 21.5rem;
 }
-
 .navButtons {
   display: flex;
   flex-direction: column;
@@ -1627,8 +2089,16 @@ header{
 .homeSecond{
   margin-top: 30px;
   margin-bottom: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .charts{
   margin-bottom: 200px;
 } 
+.weatherNCount{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 }   
