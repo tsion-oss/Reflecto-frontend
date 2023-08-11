@@ -139,7 +139,7 @@ const UserSetting = ({ setIsLoggedIn }) => {
              
           </div>
                {showDropdown &&
-              
+               
                     <div className="dropdown" id="dropdown">
                           <p onClick={handleLogout}>Logout</p>
                           <p onClick={toUserSetting} >User Setting</p>
@@ -159,9 +159,7 @@ const UserSetting = ({ setIsLoggedIn }) => {
                               </li>
                             </ul>
                           </div>
-                  
-               )
-               }
+               )}
 
 
 
