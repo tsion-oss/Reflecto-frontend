@@ -63,7 +63,7 @@ textarea:focus{
   align-items: center;
 }
 .right-login p {
-  font-size: 0.9rem;
+  font-size: 1.8rem;
   font-family: Amita;
 }
 .right-login form{
@@ -89,12 +89,13 @@ textarea:focus{
   text-align: left;
   color: #000;
   font-family: 'IM FELL Great Primer SC';
-  font-size: 0.7rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .right-login .input-wrapper input[type="text"],
 .right-login .input-wrapper input[type="password"] {
-  min-width: 13rem;
+  min-width: 18rem;
   padding: 10px;
   border: none;
   background-color: transparent;
