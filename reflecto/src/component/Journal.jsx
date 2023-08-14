@@ -297,23 +297,26 @@ const [editingIndex, setEditingIndex] = useState(-1);
                {showDropdown &&
                <div className="dropdown" id="dropdown">
                     <p onClick={handleLogout}>Logout</p>
-                    <NavLink className='navUserSetting' to='/usersetting'>User setting</NavLink>
+                   
                 </div>}
         
                {showOptions && ( 
-                  <div className='options'>
-                      <ul>
-                        <li>
-                          <NavLink to='/home' activeClassName="active">My Reflection</NavLink>
-                        </li>
-                        <li>
-                          <NavLink to='/mood' activeClassName="active">My Moods</NavLink>
-                        </li>
-                        <li>
-                          <NavLink to='/journal' activeClassName="active">My Journals</NavLink>
-                        </li>
-                      </ul>
-                    </div>
+                    <div className='options'>
+                    <ul>
+                      <li>
+                        <NavLink to='/home' activeClassName="active">My Reflection</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to='/mood' activeClassName="active">My Moods</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to='/journal' activeClassName="active">My Journals</NavLink>
+                      </li>
+                      <li>
+                      <NavLink className='navUserSetting' to='/usersetting'>User setting</NavLink>
+                      </li>
+                    </ul>
+                  </div>
                )}
 
         < div className="navNHeader">
