@@ -7,7 +7,10 @@ body{
   padding: 0;
   margin: 0;
 }
-
+.navUserSetting{
+ text-decoration: none;
+ color: white;
+}
 
 
  @media (max-width: 425px) {
@@ -264,13 +267,15 @@ textarea:focus{
   background-color: rgba(255, 255, 255, 0.397);
   height: 100%;
   width: 100%;
-  padding: 5%;
+  padding: 1% 5%;
+  font-size: 1.3rem;
 }
 .options{
   background-color: rgba(0, 0, 0, 0.35);
   height: 100%;
   width: 100%;
-  padding: 5%;
+  padding: 1% 0%;
+  
 }
 div.options ul{
   list-style: none;
@@ -278,7 +283,8 @@ div.options ul{
 div.options a{
   text-decoration: none;
   color: white;
- 
+  font-size: 1.3rem;
+
 }
 .charts{
   max-width: 20rem;
@@ -839,13 +845,14 @@ div.userSettingBox{
     background-color: rgba(255, 255, 255, 0.397);
     height: 100%;
     width: 100%;
-    padding: 5%;
+    padding: 1% 5%;
+    font-size: 1.3rem;
   }
   .options{
     background-color: rgba(0, 0, 0, 0.35);
     height: 100%;
     width: 100%;
-    padding: 5%;
+    padding: 1%;
   }
   div.options ul{
     list-style: none;
@@ -853,7 +860,7 @@ div.userSettingBox{
   div.options a{
     text-decoration: none;
     color: white;
-   
+    font-size: 1.3rem;
   }
 
   
@@ -1423,13 +1430,14 @@ div.userSettingBox{
     background-color: rgba(255, 255, 255, 0.397);
     height: 100%;
     width: 100%;
-    padding: 5%;
+    padding: 1% 5%;
+    font-size: 1.3rem;
   }
   .options{
     background-color: rgba(0, 0, 0, 0.35);
     height: 100%;
     width: 100%;
-    padding: 5%;
+    padding: 1%;
   }
   div.options ul{
     list-style: none;
@@ -1437,7 +1445,7 @@ div.userSettingBox{
   div.options a{
     text-decoration: none;
     color: white;
-   
+    font-size: 1.3rem;
   }
 
   

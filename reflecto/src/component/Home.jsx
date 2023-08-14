@@ -160,7 +160,7 @@ export default function Home() {
                {showDropdown &&
                <div className="dropdown" id="dropdown">
                     <p onClick={handleLogout}>Logout</p>
-                    <p onClick={toUserSetting} >User Setting</p>
+                    <NavLink className='navUserSetting' to='/usersetting'>User setting</NavLink>
                 </div>}
         
                {showOptions && ( 
