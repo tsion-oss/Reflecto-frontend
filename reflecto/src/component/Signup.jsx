@@ -13,7 +13,7 @@ export default function SignUp() {
   const handleSignup = async (e) => {
     e.preventDefault();
    
-    const response = await axios.post('https://reflecto-production.up.railway.app/register', {username: username, password: password})
+    const response = await axios.post('https://reflecto-production.up.railway.app/api/register', {username: username, password: password})
 
     const token = response.data.token
    
