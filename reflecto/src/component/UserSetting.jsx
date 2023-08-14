@@ -70,7 +70,7 @@ const UserSetting = ({ setIsLoggedIn }) => {
   const handleUpdateUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3001/api/user/${userData.id}`, userData);
+      await axios.put(`https://reflecto-production.up.railway.app/api/user/${userData.id}`, userData);
       console.log('User settings updated successfully');
     } catch (error) {
       console.error('Error updating user settings', error.message);
@@ -87,7 +87,7 @@ const UserSetting = ({ setIsLoggedIn }) => {
 
   const deleteUser = async () => {
     try {
-      await axios.delete(`http://localhost:3001/api/user/${userData.id}`);
+      await axios.delete(`https://reflecto-production.up.railway.app/api/user/${userData.id}`);
       handleLogout();
       console.log('User deleted');
     } catch (error) {

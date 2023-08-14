@@ -12,7 +12,7 @@ export default function MoodGraph() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/api/mood')
+      .get('https://reflecto-production.up.railway.app/api/mood')
       .then((response) => {
         if (response.data && Array.isArray(response.data)) {
           setMoodData(response.data);

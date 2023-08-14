@@ -30,7 +30,7 @@ export default function Mood() {
 
   const getAxiosInstance = () => {
     return axios.create({
-      baseURL: 'http://localhost:3001/api',
+      baseURL: 'https://reflecto-production.up.railway.app/api',
     });
   };
 

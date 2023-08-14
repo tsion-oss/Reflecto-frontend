@@ -13,7 +13,7 @@ export default function Login() {
     e.preventDefault()
     console.log(username)
    
-    const response = await axios.post('http://localhost:3001/login', {username: username, password: password})
+    const response = await axios.post('https://reflecto-production.up.railway.app/login', {username: username, password: password})
      
     console.log(response.data)
     const userInfo = {
