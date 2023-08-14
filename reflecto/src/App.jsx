@@ -23,7 +23,7 @@ function App() {
     });
   }, []);
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('jwtToken'));
   const location = useLocation();
 
   useEffect(() => {
@@ -36,13 +36,13 @@ function App() {
       {/* Render Nav component only when logged in */}
       {isLoggedIn && <Nav />}
       <Routes>
-        <Route path="/" element={isLoggedIn ? <Home /> : <Welcome />} />
+        <Route path="/" element={isLoggedIn ? <Home /> : <Welcome setIsLoggedIn={setIsLoggedIn} />} />
         
         {isLoggedIn ? (
           <>
-            <Route path="/home" element={<Home />} />
-            <Route path="/journal" element={<Journal />} />
-            <Route path="/mood" element={<Mood />} />
+            <Route path="/home" element={<Home setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/journal" element={<Journal setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/mood" element={<Mood setIsLoggedIn={setIsLoggedIn} />} />
             <Route path='/usersetting' element={<UserSetting setIsLoggedIn={setIsLoggedIn} />} />
             
           </>

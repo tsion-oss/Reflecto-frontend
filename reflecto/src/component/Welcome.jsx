@@ -2,17 +2,18 @@ import React, { useState} from "react";
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import login from '../images/login.png'
+import { useNavigate } from 'react-router-dom'
 
-export default function Login() {
+export default function Login({ setIsLoggedIn }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate(); 
 
   // Function to handle the login form submission
   const handleLogin =  async (e) => {
     e.preventDefault()
     console.log(username)
-   
+   try{
     const response = await axios.post('https://reflecto-production.up.railway.app/api/login', {username: username, password: password})
      
     console.log(response.data)
@@ -24,9 +25,13 @@ export default function Login() {
     const token = response.data.token
      console.log(userInfo)
    
-    localStorage.setItem('jwtToken', JSON.stringify(userInfo))
-    window.location.href = '/home'
-
+     localStorage.setItem('jwtToken', JSON.stringify(userInfo));
+      setIsLoggedIn(true)
+      navigate('/home'); // Use the navigate function to navigate to "/home"
+    } catch (error) {
+      // Handle error
+      console.error(error);
+    }
   
   };
 
